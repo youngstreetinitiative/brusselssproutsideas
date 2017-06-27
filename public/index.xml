@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo website</title>
+    <title>Brussels Sprouts Ideas</title>
     <link>/</link>
-    <description>Recent content on A Hugo website</description>
+    <description>Recent content on Brussels Sprouts Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 May 2016 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Best Test Posts There Ever Was. Biggly!</title>
+      <link>/post/2017-06-27-jwtestertest/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-06-27-jwtestertest/</guid>
+      <description>Thoughts and feelings Belgium: land of chocolate, fries, waffles and beer. Oh how it calls from across the oceans and skies to our glassy nest in Waterloo. It would not take Hercule Poirot to see that our adventures will lead us to new discoveries… of the R kind. My excitement level can be calculated as follows:
+\(x = \lambda { \rho ^{2\sigma}}/\sqrt{Nintendo64}\)
+Where variables are defined as follows:
+  Variable Definition    \(x\) Excitement (in utils)  \(\lambda\) Waffles  \(\rho\) R learnings make awesome glorious YSI  \(\sigma\) Airline food  \(Nintendo64\) Japanese good times    \(x\) has a base rate of \(\pi =\) 3.</description>
+    </item>
+    
+    <item>
+      <title>newpost</title>
+      <link>/post/2017-06-23-testpost/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/post/2017-06-23-testpost/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+summary(cars) ## speed dist ## Min.</description>
+    </item>
     
     <item>
       <title>About</title>
@@ -22,13 +45,13 @@
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
+      <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/2015/07/23/hello-r-markdown/</guid>
-      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
-summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
     </item>
     
   </channel>
