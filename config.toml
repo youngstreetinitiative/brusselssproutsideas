@@ -54,33 +54,33 @@ googleAnalytics = ""
     src       = "/img/main/logo.jpg"
     # modify your picture in the shape of a circle or
     # future imperfect's hexagonal shape
-    circle    = false
-    imperfect = true
+    circle    = true
+    imperfect = false
     width     = ""
     alt       = "Brussels Sprouts Ideas"
 
 # Adjust the amount of recent posts on the sidebar.
 # This is optional. The default value 5 will be used
 [params.postAmount]
-    sidebar = 2
+    sidebar = 5
 
 # Set up your menu items in the navigation bar
 # You can use identifier to prepend a font awesome icon to your text
-[[menu.main]]
-    name = "Blog"
-    url = "/blog"
-    identifier = "fa fa-newspaper-o"
-    weight = 1
+#[[menu.main]]
+    #name = "Blog"
+    #url = "/blog"
+    #identifier = "fa fa-newspaper-o"
+    #weight = 1
 
-[[menu.main]]
-    name = "Categories"
-    url = "/categories"
-    weight = 2
+#[[menu.main]]
+    #name = "Categories"
+    #url = "/categories"
+    #weight = 2
 
-[[menu.main]]
-    name = "About"
-    url = "/about"
-    weight = 3
+#[[menu.main]]
+    #name = "About"
+    #url = "/about"
+    #weight = 3
 
 # Insert your username and the icon will apear on the page as long as
 # socialAppearAtTop or socialAppearAtBottom is set to true in the params area
