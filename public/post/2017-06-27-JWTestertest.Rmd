@@ -1,0 +1,42 @@
+---
+title: "Best Test Posts There Ever Was. Biggly!"
+author: "Jackson"
+date: "2017-06-27"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Thoughts and feelings
+
+Belgium: land of chocolate, fries, waffles and beer. Oh how it calls from across the oceans and skies to our glassy nest in *Waterloo*. It would not take [Hercule Poirot](https://en.wikipedia.org/wiki/Hercule_Poirot) to see that our adventures will lead us to new discoveries... of the ***R*** kind. My excitement level can be calculated as follows:
+
+$x = \lambda { \rho ^{2\sigma}}/\sqrt{Nintendo64}$
+
+Where variables are defined as follows:
+
+Variable    | Definition
+------------|---------------------------------------
+$x$         | Excitement (in utils)
+$\lambda$   | Waffles
+$\rho$      | R learnings make awesome glorious YSI
+$\sigma$    | Airline food
+$Nintendo64$| Japanese good times
+
+$x$ has a base rate of $\pi =$ `r pi`
+
+
+
+##### **Non sequitur**
+Below is an ANOVA analysis I pulled from notes of one of my third year statistics subject
+
+*Enjoy!*
+```{r eval=T,echo=T}
+Y = c(15.7,14.6,16.5,14.7,9.8,14.6,11.9,12.4,7.9,10.3,9.7,9.6,18.0,17.4,15.1,14.4,13.6,10.6,11.8,13.3,8.8,8.2,11.3,11.2)
+A = factor(c(0,0,0,0,4,4,4,4,8,8,8,8,0,0,0,0,4,4,4,4,8,8,8,8))
+B = factor(c(rep(3,12),rep(10,12)))
+aov(Y~A*B)
+summary(aov(Y~A*B))
+```

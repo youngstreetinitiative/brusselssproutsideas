@@ -1,31 +1,54 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>A Hugo website</title>
-    <link>/</link>
-    <description>Recent content on A Hugo website</description>
+    <title>Brussels Sprouts Ideas</title>
+    <link>http://brussels-sprouts-ideas.netlify.com/</link>
+    <description>Recent content on Brussels Sprouts Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 May 2016 21:48:51 -0700</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://brussels-sprouts-ideas.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Best Test Posts There Ever Was. Biggly!</title>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/</link>
+      <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/</guid>
+      <description>Thoughts and feelingsBelgium: land of chocolate, fries, waffles and beer. Oh how it calls from across the oceans and skies to our glassy nest in Waterloo. It would not take Hercule Poirot to see that our adventures will lead us to new discoveries… of the R kind. My excitement level can be calculated as follows:
+\(x = \lambda { \rho ^{2\sigma}}/\sqrt{Nintendo64}\)
+Where variables are defined as follows:
+VariableDefinition\(x\)Excitement (in utils)\(\lambda\)Waffles\(\rho\)R learnings make awesome glorious YSI\(\sigma\)Airline food\(Nintendo64\)Japanese good times\(x\) has a base rate of \(\pi =\) 3.</description>
+    </item>
+    
+    <item>
+      <title>newpost</title>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/</link>
+      <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+summary(cars)## speed dist ## Min.</description>
+    </item>
+    
+    <item>
       <title>About</title>
-      <link>/about/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/about/</link>
       <pubDate>Thu, 05 May 2016 21:48:51 -0700</pubDate>
       
-      <guid>/about/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/about/</guid>
       <description>This is a &amp;ldquo;hello world&amp;rdquo; example website for the blogdown package. The theme was forked from @jrutheiser/hugo-lithium-theme and modified by Yihui Xie.</description>
     </item>
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/2015/07/23/hello-r-markdown/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/2015/07/23/hello-r-markdown/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
