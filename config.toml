@@ -1,6 +1,6 @@
 baseurl = "http://brussels-sprouts-ideas.netlify.com/"
 languageCode = "en-us"
-title = "Hugo Future Imperfect"
+title = "Brussels Sprouts Ideas"
 theme = "hugo-future-imperfect"
 preserveTaxonomyNames = true
 paginate = 3
@@ -51,11 +51,11 @@ googleAnalytics = ""
 # A width of less than 100px is recommended
 # This is optional
 [params.intro.pic]
-    src       = "/img/main/logo.jpg"
+    src       = "https://github.com/youngstreetinitiative/brusselssproutsideas/blob/master/public/images/ysilogo.png"
     # modify your picture in the shape of a circle or
     # future imperfect's hexagonal shape
-    circle    = true
-    imperfect = false
+    circle    = false
+    imperfect = true
     width     = ""
     alt       = "Brussels Sprouts Ideas"
 
@@ -72,10 +72,10 @@ googleAnalytics = ""
     identifier = "fa fa-newspaper-o"
     weight = 1
 
-#[[menu.main]]
-    #name = "Categories"
-    #url = "/categories"
-    #weight = 2
+[[menu.main]]
+    name = "Categories"
+    url = "/categories"
+    weight = 2
 
 #[[menu.main]]
     #name = "About"
