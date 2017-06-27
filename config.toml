@@ -1,4 +1,4 @@
-baseurl = "http://hugo.spf13.com/"
+baseurl = "http://brussels-sprouts-ideas.netlify.com/"
 languageCode = "en-us"
 title = "Hugo Future Imperfect"
 theme = "hugo-future-imperfect"
@@ -16,7 +16,7 @@ googleAnalytics = ""
     socialAppearAtTop    = true
     socialAppearAtBottom = true
     # set this to the section name if section is not post
-    viewMorePostLink     = "/blog/"
+    # viewMorePostLink     = "/blog/"
 
 # Optional Params
     categoriesByCount    = true
