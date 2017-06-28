@@ -1,0 +1,48 @@
+---
+title: "Labour Mobility Test Post. HUGE!"
+author: "Jackson"
+date: "2017-06-28"
+output: html_document
+---
+
+
+
+<div id="labour-mobility-in-australia-from-1975-2016" class="section level2">
+<h2>Labour Mobility in Australia from 1975-2016</h2>
+<p>The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.</p>
+<p>The following data comes from report available <a href="http://www.abs.gov.au/ausstats/abs@.nsf/mf/6209.0/">online</a> for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the <a href="http://www.sl.nsw.gov.au/research-and-collections">Library of New South Wales</a>.</p>
+<div id="changed-employer" class="section level3">
+<h3>Changed employer</h3>
+<pre class="r"><code>ABSLabourMobility &lt;- ABSLabourMobility %&gt;%
+  mutate(PropChangedEmp=ChangedEmp/Employed)
+ggplot(subset(ABSLabourMobility,!is.na(PropChangedEmp)),aes(x=Date,y=PropChangedEmp))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.16),breaks=c(seq(0,0.16,0.02)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed at Survey&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-1-1.png" width="960px" /></p>
+</div>
+<div id="reasons-left-job" class="section level3">
+<h3>Reasons left job</h3>
+<pre class="r"><code>ReasonCeasedEmp &lt;- ReasonCeasedEmpABS %&gt;% select(-CeasedEmp) %&gt;%
+  gather(key=ReasonLeft,value=Ceased,-c(Date,EmpSomeTime)) %&gt;%
+  mutate(PropReasonLeft=Ceased/EmpSomeTime,
+         Date=as.Date(Date,format=&quot;%d/%m/%Y&quot;),
+         ReasonLeft=as.factor(ReasonLeft))
+
+ggplot(subset(ReasonCeasedEmp,ReasonLeft==&quot;JobLoser&quot;|ReasonLeft==&quot;Jobleaver&quot;),
+              aes(x=Date,y=PropReasonLeft,colour=ReasonLeft))+
+    geom_line() + 
+    scale_y_continuous(limits=c(0,0.14),breaks=c(seq(0,0.14,0.02)),labels=scales::percent)+
+    scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed during year&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-2-1.png" width="960px" /></p>
+<pre class="r"><code>ggplot(subset(ReasonCeasedEmp,ReasonLeft!=&quot;JobLoser&quot; &amp; ReasonLeft!=&quot;Jobleaver&quot;),
+       aes(x=Date,y=PropReasonLeft,colour=ReasonLeft))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.1),breaks=c(seq(0,0.1,0.02)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed during year&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-3-1.png" width="960px" /></p>
+</div>
+</div>
