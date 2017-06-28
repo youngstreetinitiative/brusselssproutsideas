@@ -1,0 +1,776 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Labour Mobility Test Post. HUGE!</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.24" />
+        
+
+
+        
+            <meta name="author" content="Jackson">
+        
+        
+            
+                <meta name="description" content="Nathan and Jackson&#39;s Brussels Blog, for the sharing of knowledge. Powered by Hugo">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="Labour Mobility Test Post. HUGE!"/>
+<meta name="twitter:title" content="Labour Mobility Test Post. HUGE!"/>
+<meta name="twitter:description" content="Labour Mobility in Australia from 1975-2016The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.
+The following data comes from report available online for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the Library of New South Wales.
+Changed employerABSLabourMobility &lt;- ABSLabourMobility %&gt;%mutate(PropChangedEmp=ChangedEmp/Employed)ggplot(subset(ABSLabourMobility,!"/>
+<meta name="twitter:site" content="@things_tomsays"/>
+
+        <meta property="og:title" content="Labour Mobility Test Post. HUGE!" />
+<meta property="og:description" content="Labour Mobility in Australia from 1975-2016The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.
+The following data comes from report available online for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the Library of New South Wales.
+Changed employerABSLabourMobility &lt;- ABSLabourMobility %&gt;%mutate(PropChangedEmp=ChangedEmp/Employed)ggplot(subset(ABSLabourMobility,!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/" />
+
+
+
+<meta property="article:published_time" content="2017-06-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-06-28T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Labour Mobility Test Post. HUGE!">
+<meta itemprop="description" content="Labour Mobility in Australia from 1975-2016The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.
+The following data comes from report available online for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the Library of New South Wales.
+Changed employerABSLabourMobility &lt;- ABSLabourMobility %&gt;%mutate(PropChangedEmp=ChangedEmp/Employed)ggplot(subset(ABSLabourMobility,!">
+
+
+<meta itemprop="dateModified" content="2017-06-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="132">
+
+
+
+<meta itemprop="keywords" content="R,R Markdown,plot,regression," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Brussels Sprouts Ideas</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://brussels-sprouts-ideas.netlify.com/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://brussels-sprouts-ideas.netlify.com/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/"><p>Labour Mobility Test Post. HUGE!</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/"><p>Best Test Posts There Ever Was. Biggly!</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/"><p>newpost</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/"><p>Hello R Markdown</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/"><p>Posts</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&text=Labour%20Mobility%20Test%20Post.%20HUGE%21&via=things_tomsays" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Jackson&body=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/">Labour Mobility Test Post. HUGE!</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-06-28'>
+            June 28, 2017</time>
+        <span class="author">Jackson</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&text=Labour%20Mobility%20Test%20Post.%20HUGE%21&via=things_tomsays" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f&title=Labour%20Mobility%20Test%20Post.%20HUGE%21" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Jackson&body=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-06-28-labour-mobility%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    <div id="content">
+        <div id="labour-mobility-in-australia-from-1975-2016" class="section level2">
+<h2>Labour Mobility in Australia from 1975-2016</h2>
+<p>The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.</p>
+<p>The following data comes from report available <a href="http://www.abs.gov.au/ausstats/abs@.nsf/mf/6209.0/">online</a> for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the <a href="http://www.sl.nsw.gov.au/research-and-collections">Library of New South Wales</a>.</p>
+<div id="changed-employer" class="section level3">
+<h3>Changed employer</h3>
+<pre class="r"><code>ABSLabourMobility &lt;- ABSLabourMobility %&gt;%
+  mutate(PropChangedEmp=ChangedEmp/Employed)
+ggplot(subset(ABSLabourMobility,!is.na(PropChangedEmp)),aes(x=Date,y=PropChangedEmp))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.16),breaks=c(seq(0,0.16,0.02)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed at Survey&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-1-1.png" width="960px" /></p>
+</div>
+<div id="reasons-left-job" class="section level3">
+<h3>Reasons left job</h3>
+<pre class="r"><code>ReasonCeasedEmp &lt;- ReasonCeasedEmpABS %&gt;% select(-CeasedEmp) %&gt;%
+  gather(key=ReasonLeft,value=Ceased,-c(Date,EmpSomeTime)) %&gt;%
+  mutate(PropReasonLeft=Ceased/EmpSomeTime,
+         Date=as.Date(Date,format=&quot;%d/%m/%Y&quot;),
+         ReasonLeft=as.factor(ReasonLeft))
+
+ggplot(subset(ReasonCeasedEmp,ReasonLeft==&quot;JobLoser&quot;|ReasonLeft==&quot;Jobleaver&quot;),
+              aes(x=Date,y=PropReasonLeft,colour=ReasonLeft))+
+    geom_line() + 
+    scale_y_continuous(limits=c(0,0.14),breaks=c(seq(0,0.14,0.02)),labels=scales::percent)+
+    scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed during year&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-2-1.png" width="960px" /></p>
+<pre class="r"><code>ggplot(subset(ReasonCeasedEmp,ReasonLeft!=&quot;JobLoser&quot; &amp; ReasonLeft!=&quot;Jobleaver&quot;),
+       aes(x=Date,y=PropReasonLeft,colour=ReasonLeft))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.1),breaks=c(seq(0,0.1,0.02)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;2 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed during year&quot;)+xlab(&quot;Year&quot;)</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility_files/figure-html/unnamed-chunk-3-1.png" width="960px" /></p>
+</div>
+</div>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/"
+                class="button big previous">Best Test Posts There Ever Was. Biggly!</a></li>
+    
+
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/brussels-sprouts-ideas.netlify.com\/post\/2017-06-28-labour-mobility\/';
+    var disqus_title = 'Labour Mobility Test Post. HUGE!';
+    var disqus_url = 'http:\/\/brussels-sprouts-ideas.netlify.com\/post\/2017-06-28-labour-mobility\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="https://github.com/youngstreetinitiative/brusselssproutsideas/raw/master/public/images/ysilogo.png" alt="Brussels Sprouts Ideas" /></a>
+                
+            
+            
+                <header>
+                    <h2>Brussels Sprouts Ideas</h2>
+                    <p>Nathan and Jackson's Brussels Blog, for the sharing of knowledge. Powered by Hugo</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/youngstreetinitiative" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/things_tomsays" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/">Labour Mobility Test Post. HUGE!</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-06-28'>
+                                    June 28, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/">Best Test Posts There Ever Was. Biggly!</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-06-27'>
+                                    June 27, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/">newpost</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-06-23'>
+                                    June 23, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/">Hello R Markdown</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2015-07-23'>
+                                    July 23, 2015</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/">Posts</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-06-28'>
+                                    June 28, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                "/post/"
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/r/">R</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Day 0: Nothing to report</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/youngstreetinitiative" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/things_tomsays" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Brussels Sprouts Ideas. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
+        
+
+        
+
+            
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+            
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+
