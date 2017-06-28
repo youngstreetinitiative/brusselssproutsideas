@@ -1,0 +1,56 @@
+---
+title: "Labour Mobility Second Test. Bigger and bigglier. NO SHAME!"
+author: "Jackson"
+date: "2017-06-28"
+output: html_document
+---
+
+
+
+<div id="labour-mobility-in-australia-from-1975-2016-continued" class="section level2">
+<h2>Labour Mobility in Australia from 1975-2016 Continued…</h2>
+<hr />
+<p>Graphs still needs to be adjusted for:</p>
+<ul>
+<li>Lack of data between 1987 and 1994</li>
+<li>Inclusion of change in locality but not employer individuals from 1994 to 2004</li>
+</ul>
+<pre class="r"><code>ChangeEmpIndustry &lt;- LabMobIndustryABS %&gt;% 
+  mutate(Date=as.Date(Date,format=&quot;%d/%m/%Y&quot;),
+         Agriculture=Agriculture_ChangeEmp/Agriculture_Count,
+         MiningUtilities=MiningUtilities_ChangeEmp/MiningUtilities_Count,
+         Manufacturing=Manufacturing_ChangeEmp/Manufacturing_Count,
+         Construction=Construction_ChangeEmp/Construction_Count,
+         WholesaleRetail=WholesaleRetail_ChangeEmp/WholesaleRetail_Count,
+         TransportStorageCommunications=TransportStorageCommunications_ChangeEmp/
+           TransportStorageCommunications_Count,
+         FinanceBusinessServ=FinanceBusinessServ_ChangeEmp/FinanceBusinessServ_Count,
+         CommunityServ=CommunityServ_ChangeEmp/CommunityServ_Count,
+         PublicAdmin=PublicAdmin_ChangeEmp/PublicAdmin_Count,
+         EntertainmentHotelsPersonalServ=EntertainmentHotelsPersonalServ_ChangeEmp/
+           EntertainmentHotelsPersonalServ_Count) %&gt;% 
+  select(Date,Agriculture,MiningUtilities,Manufacturing,Construction,WholesaleRetail,
+         TransportStorageCommunications,FinanceBusinessServ,CommunityServ,
+         PublicAdmin,EntertainmentHotelsPersonalServ) %&gt;%
+  gather(key=Industry,value=Proportion,-Date)</code></pre>
+<pre class="r"><code>ggplot(ChangeEmpIndustry %&gt;% filter(Industry %in% c(&quot;Agriculture&quot;,&quot;MiningUtilities&quot;,
+                                                    &quot;Manufacturing&quot;,&quot;TransportStorageCommunications&quot;,
+                                                    &quot;Construction&quot;)),
+       aes(x=Date,y=Proportion,colour=Industry))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.26),breaks=c(seq(0,0.25,0.05)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;3 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed at Survey&quot;)+xlab(&quot;Year&quot;)+
+  theme(legend.position=&quot;top&quot;,legend.title = element_blank())</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility-2_files/figure-html/unnamed-chunk-2-1.png" width="960px" /></p>
+<pre class="r"><code>ggplot(ChangeEmpIndustry %&gt;% filter(Industry %in% c(&quot;WholesaleRetail&quot;,
+                                                    &quot;FinanceBusinessServ&quot;,&quot;CommunityServ&quot;,
+                                                    &quot;PublicAdmin&quot;,&quot;EntertainmentHotelsPersonalServ&quot;)),
+       aes(x=Date,y=Proportion,colour=Industry))+
+  geom_line() + 
+  scale_y_continuous(limits=c(0,0.26),breaks=c(seq(0,0.25,0.05)),labels=scales::percent)+
+  scale_x_date(breaks = date_breaks(&quot;3 years&quot;),labels=date_format(&quot;%Y&quot;))+
+  ylab(&quot;Proportion of Workers Employed at Survey&quot;)+xlab(&quot;Year&quot;)+
+  theme(legend.position=&quot;top&quot;,legend.title = element_blank())</code></pre>
+<p><img src="/post/2017-06-28-Labour-Mobility-2_files/figure-html/unnamed-chunk-3-1.png" width="960px" /></p>
+</div>
