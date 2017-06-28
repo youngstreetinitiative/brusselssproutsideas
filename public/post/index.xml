@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Brussels Sprouts Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 27 Jun 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jun 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://brussels-sprouts-ideas.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Labour Mobility Test Post. HUGE!</title>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/</link>
+      <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/</guid>
+      <description>Labour Mobility in Australia from 1975-2016The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.
+The following data comes from report available online for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the Library of New South Wales.
+Changed employerABSLabourMobility &amp;lt;- ABSLabourMobility %&amp;gt;%mutate(PropChangedEmp=ChangedEmp/Employed)ggplot(subset(ABSLabourMobility,!</description>
+    </item>
     
     <item>
       <title>Best Test Posts There Ever Was. Biggly!</title>
