@@ -1,0 +1,65 @@
+---
+title: "Data Carpentary tutorial"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Data Carpentary Tutorial
+## Tuesday Day 1
+
+At the end of the day the data carpentary tutorial will mainly be useful to YSI for again, making sure, we are getting the basics of workflow management right. Much of the material in the workshop I had already been exposed to (mostly through Nathan and Ross's guidance). On that note what will follow is a set of important take-aways.
+
+## Documentation
+1.  Documentation is generally stored best as plain text rather than word or PDF. Now of course this is obvious and mandatory when working with repos, but worth keeping in mind as we may look into introducing codebooks and summary tables
+2.  Best practice is to put text and code in the documentation. I think we're a hold of this one.
+3.  Be clear about assertions involved in the data analysis. e.g. how to deal with 'odd' points, or treatment of NA's, or filters.
+4.  For large datasets there is a Unix tool `make`. `make` will modularise data manipulations to read into R markdown
+5.  Setting parameters at the top of an R markdown file will be very useful to make reports for specific susbsets or a random sample of a dataset. You can also put R code into the parameters line.
+6.  You can make tables from `summarise` functions look really, really nice using knitr::kable()
+
+
+## Organisation: best practices
+### File naming
+File naming conventions are definitely an area for improvement at YSI. I really like the convention rules from the workshop, based on heirachy. For example (from bio of course) say you have an experiment of a certain type `BRAFAssay`, done on a certain date, with certain plasmid treatment `Plasmid-CL56`, which is one of many samples of the same treatment `A1`. A good name for the datafile would be `BRAFAssay_2017-07-04_Plasmid-CL56_A1.csv`. We put the highest level of the heirachy first. This makes meta-analysis of data files, and in our cases scripts and graph sets, and even presentations, much easier.
+
+### Automation
+Automating R markdown is best practice for self-documenting when possible. 
+Automating testing with `test_that` sounds like something we should check out. `test_that` runs lots of tests on scripts and returns where the problems are. 
+
+### Version control
+A tip from here worth considering: whenever there is a significant edit to a data analysis folder save the older folder version (dated) and zip it.
+Also on the folder size issue, don't commit html files to repo until the point of publication #protip
+
+### How to publish
+The presenters argue for use of non-proprietary formats i.e. not PDF or Office or image formats.
+
+### Licensing
+Respect the community norms of referencing package creators. I didn't know this was a thing. We should know this is a thing. Of course at the conference there is also recommendations that best practice is to publish your code, even if it is proprietary.
+
+### Package loading
+vignette is a word getting thrown around A LOT among the peeps. The pro-tip is set up a message when a package is loading which is a vignette of what the package is doing.
+
+
+
+
+The material for the workshop is [here](https://fmichonneau.github.io/2017-useR-tutorial/).
+
+
+## Packages mentioned
+- `projectTemplate`
+- `remake` (not on CRAN) for testing if a file runs in different sessions
+- `rfigshare` for uploading datasets to Figshare which apparently allows yuge files
+
+
+### Side notes:
+- `replace` function is probably better than `ifelse` within a mutate for odd values
+- I have in my notes to look over data-raw. I think this is to do with conventions around storing neatly made .csvs.
+- People have written bots which actively search for passwords on public GitHub repos!
+- GitHub repos have the clear weakness of not being sevure in the long-term. So short to medium term is cool, but longer term organisational servers are needed

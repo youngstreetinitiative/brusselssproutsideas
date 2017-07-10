@@ -1,0 +1,38 @@
+---
+title: "German Fuel Prices Workshop"
+author: "Jackson"
+date: "2017-07-08"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+There was a talk from Boris Vaillant of a group called Quantitative Consulting based in Bon. He had been working on an online workshop which I believe will be very useful for us all to try as a team to develop our skills and workflow procedures. A link to an html of the presentation is [here](http://schd.ws/hosted_files/user2017/c8/G_Presentation_UseR_170704_V18.html)
+
+Unfortunately this workshop is not ready yet and I cannot even find a website where the link will be put up. From the presentation I do know that the presentation will involve:
+
+* Reading in an almost complete record of German fuel prices
+
+* Geomatching traffic data and the locations of petrol stations with their distance to the highway
+
+* Working with purrr workflow to look at all the dataset inputs simultaneously
+
+* Looking at time series of intra-day patterns -> finding high prices at night with a steep drop at 6am, increasing again from noon
+
+* Simple statistical models with relation to: 
+  + number of competitors and other variables
+  + location
+  + population density
+  + hotels
+  + competitor's prices
+
+* And of course mapping!
+
+
+
+*I'll keep my eyes peeled for when this becomes available online*
+
+

@@ -1,0 +1,100 @@
+---
+title: "Workflow and Repository Management Talks"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+## Ensemble Packages
+The first presentation I went to on workflow was a review of best practice in package development. Essentially the speaker was talking the benefits of ensemble packages which load multiple packages you need all at once so that all steps of a project can be conducted by calling the one package. This includes extensions to:
+
+* graphical user interfaces
+
+* methodology comparison
+
+* integration of results
+
+The case study potentially worth a look is BiclustGUI which constructs a window simply for R functions, what they call a "graphic use interface."
+
+So for best practice the questions to ask about **ensemble** package design are:
+
+1)  are inputs and outputs unified (by name)?
+
+2)  does it integrate and standardise?
+
+3)  can we navigate the R packages landscape (or does it create confusion)?
+
+My take-away: This is a useful way to think about the development of a project from initial data-wrangling to an interactive presentation. 
+
+Have a squiz here: [ensemble package preso](http://schd.ws/hosted_files/user2017/ff/useR2017_MO_v3.pdf)
+
+## Clouds, Containers and Collaboration
+The package being hyped in this session was `rosettaHUB` which is a connection to a website: edu.rosettahub.com. AWS Educate is the name of the group involved. This [website](https://www.rosettahub.com/welcome) can explain a bit more.
+
+Rosetta Hub integrates R with other programs by storing/working in a public cloud (Amazon at the moment). For example the website will let you use Excel from R commands, deploy Shiny apps and store data. The interface looks like you are running a desktop with R Studio from within a browser. As you work you can pull up python, Excel, whatever in the interface. You can also mirror an R table in Excel in real time!
+
+The real highlight of this is that this "desktop" session can be made simultaneously collaborative, like a Google doc. You just need to send the web link, as the presenter demonstrated by asking the audiance to follow the link and then picking a username at random to join the fun. It can even be a public session.
+
+Finally, the presenter showed the interaction with your local environment by just pushing from the RStudio "real" session running on the laptop to the online hub session with just one command OR by dragging and dropping into the browser.
+
+## Docker
+[Docker](https://www.docker.com/) is what they call an "executable research compedium." Basically it is a place to submit a workspace to a publication platform to make reproducibilty incredibly quick and easy. Similar to Rosetta Hub it is an online interface. but also has many of the features of GitHub with the storing/facilitation of data, software, documentation and UI bindings. It is worth noting that [Docker](https://www.docker.com/) was not made for use with R.
+
+Docker's slogan: *"Docker's value is not technology, it is getting people to agree on something."*
+
+[Slides for the presentation are here](http://schd.ws/hosted_files/user2017/39/useR%212017-nuest-containerit-presentation.pdf) with some primo Sherlock memes.
+
+Essentially to create the right files to send to docker you create a `dockerfile` which creates what they call a 'docker image' with a 'docker container'. The [function](https://github.com/o2r-project/containerit/) `containerit` is also important for this process also it is still in beta. You can also just save scripts with `CMD_Rscript`.
+
+It was mentioned that Docker also compliments [packrat](https://github.com/rstudio/packrat).
+
+Caveat that needs mentioning is that it is unclear how much of the package they are plugging will work on non-Linux systems... 
+
+There is a tutorial on how to use this on their GitHub [https://github.com/o2r-project](https://github.com/o2r-project).. although I haven't found it yet.
+
+Also, the presenter started by mentioning an article entitled "Five selfish reasons to work reproducibly" available [here](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-015-0850-7)
+
+## Templates within an R package
+This was another session which was speaking about optimal workflow practice, without spruiking any particular package. The aim of the game is to: *"automate workflow and reporting"*
+
+The structure of templates is as follows:
+
+1)  Master document (main R Markdown output)
+
+2)  Main General Child documents (more detailed secondary/supplementary material)
+
+3)  Specific child documents (scripts/files for tests, graphics, etc.)
+
+One main tip was to use the option to set parameters in R Markdown to run throughout the documents.
+
+There is an example `template` package as well examples on their GitHub [here](http://schd.ws/hosted_files/user2017/04/business_reporting_610.pdf).
+
+
+## Modules
+Ross! Ross! Ross!
+V. exciting [presentation is here](http://schd.ws/hosted_files/user2017/78/170707_useR17_SWarnholz.pdf).
+
+[GitHub](https://github.com/wahani/modules), [R package documentation](https://cran.r-project.org/web/packages/modules/index.html)
+
+Movitation: managing dependencies between R scripts and giving options for organising functions in larger code bases. Maybe controversially, the guy loved NAMESPACE as a beautiful way to keep track of all the functions.
+
+A **module** is a unit inside a package, or otherwise described as a fancy way of putting functions in a list. So essentially you can bundle together functions which are used together. You can have function heirachies and easily see the dependencies of your functions.
+
+An example use of the package would be:
+```{}
+stats <- module({
+  import("stats", "median")
+  myMedian <- function(x) median(x, TRUE)
+})
+
+stats$myMedian(rnorm(10))
+```
+
+You can also put modules within modules!
+
+So essentially you can add an extra layer to the repository:
+A **repository** consists of **packages** which have **modules** containing **functions** and **data**
