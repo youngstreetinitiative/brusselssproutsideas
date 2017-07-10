@@ -37,12 +37,12 @@ The package being hyped in this session was `rosettaHUB` which is a connection t
 
 Rosetta Hub integrates R with other programs by storing/working in a public cloud (Amazon at the moment). For example the website will let you use Excel from R commands, deploy Shiny apps and store data. The interface looks like you are running a desktop with R Studio from within a browser. As you work you can pull up python, Excel, whatever in the interface. You can also mirror an R table in Excel in real time!
 
-The real highlight of this is that this "desktop" session can be made simultaneously collaborative, like a Google doc. You just need to send the web link, as the presenter demonstrated by asking the audiance to follow the link and then picking a username at random to join the fun. It can even be a public session.
+The real highlight of this is that this "desktop" session can be made simultaneously collaborative, like a Google doc. You just need to send the web link, as the presenter demonstrated by asking the audience to follow the link and then picking a username at random to join the fun. It can even be a public session.
 
 Finally, the presenter showed the interaction with your local environment by just pushing from the RStudio "real" session running on the laptop to the online hub session with just one command OR by dragging and dropping into the browser.
 
 ## Docker
-[Docker](https://www.docker.com/) is what they call an "executable research compedium." Basically it is a place to submit a workspace to a publication platform to make reproducibilty incredibly quick and easy. Similar to Rosetta Hub it is an online interface. but also has many of the features of GitHub with the storing/facilitation of data, software, documentation and UI bindings. It is worth noting that [Docker](https://www.docker.com/) was not made for use with R.
+[Docker](https://www.docker.com/) is what they call an "executable research compendium." Basically it is a place to submit a workspace to a publication platform to make reproducibilty incredibly quick and easy. Similar to Rosetta Hub it is an online interface. but also has many of the features of GitHub with the storing/facilitation of data, software, documentation and UI bindings. It is worth noting that [Docker](https://www.docker.com/) was not made for use with R.
 
 Docker's slogan: *"Docker's value is not technology, it is getting people to agree on something."*
 
@@ -80,9 +80,9 @@ V. exciting [presentation is here](http://schd.ws/hosted_files/user2017/78/17070
 
 [GitHub](https://github.com/wahani/modules), [R package documentation](https://cran.r-project.org/web/packages/modules/index.html)
 
-Movitation: managing dependencies between R scripts and giving options for organising functions in larger code bases. Maybe controversially, the guy loved NAMESPACE as a beautiful way to keep track of all the functions.
+Motivation: managing dependencies between R scripts and giving options for organising functions in larger code bases. Maybe controversially, the guy loved NAMESPACE as a beautiful way to keep track of all the functions.
 
-A **module** is a unit inside a package, or otherwise described as a fancy way of putting functions in a list. So essentially you can bundle together functions which are used together. You can have function heirachies and easily see the dependencies of your functions.
+A **module** is a unit inside a package, or otherwise described as a fancy way of putting functions in a list. So essentially you can bundle together functions which are used together. You can have function hierarchies and easily see the dependencies of your functions.
 
 An example use of the package would be:
 ```{}

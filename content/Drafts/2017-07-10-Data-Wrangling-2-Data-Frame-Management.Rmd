@@ -15,22 +15,22 @@ According to the [Encyclopedia of Survey Research Methods](http://methods.sagepu
 **"At the most basic level, a codebook describes the layout of the data in the data file and describes what the data codes mean. Codebooks are used to document the values associated with the answer options for a given survey question. "**
 Which basically means an excel file with columns describing the variable name and other things. 
 
-This obviously sounds very familar with our experience using HILDA.
+This obviously sounds very familiar with our experience using HILDA.
 
 The package `codebookr` allows reading in an excel spreadsheet with details about a data frame such as variable names, labels, units, factor level/category labels, date formats, limits. The function is `read_codebook`. Then you can use the function `create_factors` to check the levels and limits comply to what was in the codebook.
 
-Essentially you are applying metadata to a dataset you read in.
+Essentially you are applying metadata to a data set you read in.
 
-This talk was given by one of the only other Australia at the conference: Peter Baker at The University of Queensland's School of Public Health. I approached him later to ask a question on my mind, what if you want to go the other way and create a codebook from a given data frame? Unfortunately he doesn't know of any nice solutions to this. I believe I have found a gap in the *'package market'* as a think it would be really useful to produce a variable summary doc automatically as you go through your analysis creating/mutating variables.
+This talk was given by one of the only other Australia at the conference: Peter Baker at The University of Queensland's School of Public Health. I approached him later to ask a question on my mind, what if you want to go the other way and create a code book from a given data frame? Unfortunately he doesn't know of any nice solutions to this. I believe I have found a gap in the *'package market'* as a think it would be really useful to produce a variable summary doc automatically as you go through your analysis creating/mutating variables.
 
 The presentation slides are [here](https://schd.ws/hosted_files/user2017/9d/pbaker_user2017-2_ioslides.html#1).
 
 ## Show Me The Errors You Don't Look For
-Data cleaning made super easy! It's a claim that I think the package`dataMaid` gets bloody close to satisfying. In one line of code (the `clean` [function](https://cran.r-project.org/package=dataMaid)) r will produce an html (through R Markdown) file with summaries of how all of the vaiables. In their last project the creators produced a 1,800 page document for a client which they were very proud of! The clients less so..
+Data cleaning made super easy! It's a claim that I think the package`dataMaid` gets bloody close to satisfying. In one line of code (the `clean` [function](https://cran.r-project.org/package=dataMaid)) r will produce an html (through R Markdown) file with summaries of how all of the variables. In their last project the creators produced a 1,800 page document for a client which they were very proud of! The clients less so..
 
 Their manifesto: data.frame -> summarise -> visualise
 
-Each variable has a section with a summary table, some kind of plot, notes about infrequent observations/outliers, case differences eg OTHER vs other. `clean` does not mutate the data frame. You can also add in your own checks and select specific variables to include or leave out.
+Each variable has a section with a summary table, some kind of plot, notes about infrequent observations/outliers, case differences e.g. OTHER vs other. `clean` does not mutate the data frame. You can also add in your own checks and select specific variables to include or leave out.
 
 In essence: **42**
 We have the answers but need to figure out what was the question.

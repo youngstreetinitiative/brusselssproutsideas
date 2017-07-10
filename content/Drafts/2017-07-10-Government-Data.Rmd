@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 This is collection of 4 5 minute lightening talks which are very very relevant to our work.
 
 ## rOpenGov: Community Project for Open Government Data
-This is a presentation by a Finnish guy Leo Lahti who claims the project is aiming to foster a community rather than a package. They have created a package called [`eurostat`](http://ropengov.github.io/eurostat/) which pulled publically accessible data from all over the EU. They had no plan to make it, but the community of interested researchers working on their own packages to read public data had built to such a point that it just happened!
+This is a presentation by a Finnish guy Leo Lahti who claims the project is aiming to foster a community rather than a package. They have created a package called [`eurostat`](http://ropengov.github.io/eurostat/) which pulled publicly accessible data from all over the EU. They had no plan to make it, but the community of interested researchers working on their own packages to read public data had built to such a point that it just happened!
 
 They encourage everyone to get in touch, and I reckon if we do go down the path of reading data straight off the ABS website then we should. The **rOpenGov** group is struggling with a lack of focus at the moment. On the side the group has actually been engaged in data activism in Finland, campaigning the government to release more data.
 
@@ -26,7 +26,7 @@ He says that his pitch to government on why to use R is that it's a Swiss army k
 R.gov is a group of government data groups around the world. Look at the last slide of the preso [here](https://schd.ws/hosted_files/user2017/34/community_education_555.pdf) for a list/links. They also have a [website](https://rdotgov.wordpress.com/).
 
 ## nsoAPI
-This is a package designed to get data from public providers. You need to register yourself to access certain data sets and this differs greatly between countries (the Germans even make you pay!). They are still in the process of adding a lot of dataset but seem to be moving very quickly. For example they went from 10 Austrian sets to 40 since the beginning of the year. [Website with the details of available data through the package](https://bowerth.gitbooks.io/opendata-tables/content/)
+This is a package designed to get data from public providers. You need to register yourself to access certain data sets and this differs greatly between countries (the Germans even make you pay!). They are still in the process of adding a lot of data set but seem to be moving very quickly. For example they went from 10 Austrian sets to 40 since the beginning of the year. [Website with the details of available data through the package](https://bowerth.gitbooks.io/opendata-tables/content/)
 
 It also has a Shiny app! Because of course, the presenter rightly said "everything has to have a Shiny app or it doesn't exist."
 
@@ -38,12 +38,7 @@ José de Jesus Filho is a lawyer with the Jurimetrics Brazilian [Association](ht
 
 [His slides are here](https://schd.ws/hosted_files/user2017/f4/community_education_605.pdf)
 
-The [project](https://github.com/courtsbr) integrates web scraping, text mining, predictive analysis (with unsuperised learning (machine learning)) as well also involving a package which automatically gets through [CAPTCHs](https://github.com/decryptr).
+The [project](https://github.com/courtsbr) integrates web scraping, text mining, predictive analysis (with unsupervised learning (machine learning)) as well also involving a package which automatically gets through [CAPTCHAs](https://github.com/decryptr).
 
 
-The packages used were
-```{}
-tjsp and esaj packages: web scraping.
-
-jurisMiner: analyze judicial text data.
-}
+The packages used were `tjsp` and `esaj` packages for web scraping and `jurisMiner` to analyse judicial text data.
