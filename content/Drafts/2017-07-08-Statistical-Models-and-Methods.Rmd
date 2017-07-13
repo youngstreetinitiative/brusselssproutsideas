@@ -1,0 +1,87 @@
+---
+title: "Statistical Models and Methods"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Outliers
+I didn't get the time to go to this session, but I looked up some of the work of the presenter and I reckon it is worth a look [here](http://www.gradaanwr.net/content/ch09/). The geom_density2d addition to ggplot looks really cool. It makes a scatter plot look like a topographic map with dense areas of the plot looking like peaks. I would want to check what exactly it is using to calculate the region boundaries.
+
+![Antony Unwin's geom_density2d plot calling the package `extracat`](http://www.gradaanwr.net/wp-content/gallery/9-3d/oliveOutliers-1-page-001.jpg)
+
+## Random Forests
+
+Presentation [slides](https://schd.ws/hosted_files/user2017/31/slides169_Schlosser_Lisa.pdf)
+
+## Curve Linear Regression
+"We present a new R package for curve linear regression: the clr package."
+
+It's not available yet.
+
+## `kmlShape`
+
+## Visualisation of Statistical Models
+By Przemyslaw Biecek
+
+This was a great summary of a bunch on packages for plotting data with fitted models
+
+`ggfortify` looks great for diagnostic plots for fitted models and is sophisticated enough to give different things for different models (e.g. lm, glmnet, aareg)
+
+### Prediction: Which variables to include? What are outliers?
+`randomForestExplainer` package can show how important each variable is as well as the importance of interactions
+
+`pdp` shows partial dependents plots (still in development)
+
+`lime`
+
+### Fitting
+`forestmodel` gives coefficients and confidence intervals using `broom`
+
+`forestMerger` links betwen classes and factor levels
+
+### Validation: how good is the model
+`plotROC` compares models
+`survminer` checks the residuals from survivor analysis
+
+### Reproducibility
+`archivist` integrates well with `knitr`
+
+
+## (R)Stan
+Stan is a language for statistical models, not just for R. It is particularly good for Baysian models and now has a large number of users in government and academia.
+
+There are 4 main packages which integrate with Stan: `rstan`, `rstanarm`, `brms` and `prophet`
+
+Quote of the session occured when part of the math script from the presentation didn't print: 
+"translate the LaTeX in your head" and I bet a people in the room could!
+
+Presentation is [here](https://schd.ws/hosted_files/user2017/3f/Goodrich.pdf) with the LaTeX working.
+
+## `brms` Bayesian Multilevel Models Using Stan
+This presentation was given by [Paul Burkner](https://github.com/paul-buerkner/brms).
+
+By *multilevel* models this is useful for looking at students who belong to classes or measurements of the same person multiple times. With using the correct multilevel models you will be overconfident about estimates and ignore important dependencies. A frequentist equivalent of the Bayesian analysis used here would be GLMM, but this can miss skew in the data. 
+
+The Bayesian approach is more informative but also more complicated.
+
+
+## ICtests: Measuring the Number of Interesting Components
+In the [ICtests](https://cran.r-project.org/package=ICtest) package are functions which measure the number of interesting components so that analysis can be narrowed to those factors which have a significant affect. 
+
+The function is essentially Bayesian analysis (using PCA and FOBI assumptions for a latent factor model and then using asymptotic and bootstrap tests). 
+
+Link to the slides is [here](http://schd.ws/hosted_files/user2017/7a/ecology_statistics_620.pdf)
+
+## Better Confidence Intervals for Quantiles
+His blog about the Flint Water Crisis which was the case study is [here](http://staff.math.su.se/hoehle/blog/2017/06/18/quantiles.html)
+
+He uses the package he uses is [quantileCI](https://www.rdocumentation.org/packages/jmuOutlier/versions/1.1/topics/quantileCI).
+
+
+
