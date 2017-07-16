@@ -1,0 +1,77 @@
+---
+title: "Changepoint Analysis Workshop"
+author: "Jackson"
+date: "2017-07-10"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Introduction to optimal changepoint detection algorithms 
+## by Toby Dylan Hocking and Rebecca Killick.
+
+This workshop uses the package `changepoint` to analyse how many significant shifts in time series. [Here](http://members.cbio.mines-paristech.fr/~thocking/change-tutorial/RK-CptWorkshop.html) is the webpage with the workshop details.
+
+```{r eval=T, echo=T}
+library(changepoint)
+```
+
+A likelihood ratio test (maximising the log-likelhood ratio) is used to compare models with and without a changepoint. There are 3 different functions in R used to analyse changepoints based on changin mean (`cpt.mean`), variance (`cpt.var`) or a combination of the two (`cpt.meanvar`).
+
+When looking at comparing situations with multiple changepoints the function will use a penalised likelhood operation. First you need to pick the number of changepoints you think there should be, but even if this is known exactly there are still a lot of possible solutions.
+
+```{r eval=T, echo=T}
+data(Nile)
+
+ts.plot(Nile)
+
+## ANSWER
+nile.default=cpt.mean(Nile)
+
+cpts(nile.default)
+# 28
+
+# for the time point
+cpts.ts(nile.default)
+# 1898
+
+## pre and post change mean
+param.est(nile.default)
+
+# plot with lines for means between changepoints
+plot(nile.default)
+```
+
+
+The package is open to using four types of optimisation:
+
+* At Most One Change (`AMOC`) - only for single changepoint problems
+
+* Binary Segmenation (`BinSeg`) (Scott and Knott (1974)) which is approximate but computationally fast
+
+* Segment Neighbourhood (`SegNeigh`) (Auger and Lawrence (1989)) is slower but exact
+
+* Pruned Exact Linear Time (`PELT`) (Killick et al. (2012)) Fast and exact
+
+With `cpt.var` the general rule that for every 100 timepoints a changepoint must involve a change in variance with a ratio of 3.
+
+It is also worth paying attention to the test.stat option as it's default is a 'normal' distribution, but this should be checked.
+
+### CROPS
+Running the function you can set the penalty value which decides when to cease optimising for the best changepoint locations. The CROPS option lefts you pick the minimum and maximum penalties which implies the maximum number of times that the function will optimise the point selection. This is very useful because there are usually heaps of options for changepoint locations.
+
+Diagnostic plots are created by setting `diagnostic = TRUE` which are very useful for spotting the optimal number of changepoints
+
+### Non-parametic: `cpt.np`
+
+Essentially this function looks at changes in the distribution of quantiles rather than the mean or variance parameters. Defualt is to use 10 quantiles (`nquantiles=10`) and assume an "empirical distribution" (`test_stat="empirical_distribution"`). This method always uses `PELT` optimisation.
+
+```{r eval=T, echo=T}
+library(changepoint.np) # for non-parametric analysis
+
+
+```
+

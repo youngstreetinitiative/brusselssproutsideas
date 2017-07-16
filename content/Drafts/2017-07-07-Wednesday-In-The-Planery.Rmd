@@ -1,0 +1,117 @@
+---
+title: "Wednesday in the Planery"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Microsoft sponsor talk given by David Smith
+David Smith is a ledge. An Aussie going with a love for R, who got picked up by Microsoft a few years ago. From the sounds of his talk Microsoft has been almost completely converted to R and now spends a lot of money on keeping the R project humming along.
+
+R is now integrated into many aspects of Microsoft for *"intelligence"* which basically means analysis and forecasting/
+
+Some stat was put up on the screen that R is now the 5th most popular programming language.
+
+A big take-away was how he stated the obvious: organisations can be confident to use R even in a regulated or corporate environment *because even Microsoft uses it!* If Microsoft's legal team is good with it in all their relevant jurisdictions, yours should be too.
+
+He mentioned that next on the agenda was work with big data servers such as Hadoop & Spark to make them much faster to use and real-time.
+
+Link to the slides is [here](http://schd.ws/hosted_files/user2017/d7/R%20Then%20and%20Now%20-%20Microsoft%20Sponsor%20Talk.pptx)
+
+## Structural Equation Modelling by Yves Rossel creator of `lavaan`
+
+`lavaan` is short for latent variable analysis, which is really a different way of describing a structural equation model (SEM). 
+
+SEM analysis is not so much about prediction as about understanding the structure of latent (unobservable/unquantifiable) variables. I used an SEM analysis for my Honours thesis because in essence I was trying to understand preferences around risk, which we cannot quantify in a complete way. These techniques also have applications in climate science among other things.
+
+There is a classic example of it's use to derive whether industrialisation has a causal impact on [political democracy](http://lavaan.ugent.be/tutorial/sem.html)
+
+Slides [here](http://schd.ws/hosted_files/user2017/62/rosseel_user2017.pdf)
+
+## Stack Overflow Review of the R Community
+David Robinson is a data analyst at Stack Overflow. His presentation is pretty much all on his blog here: [varianceexplained.org](http://varianceexplained.org/r/nyr-conference/). Also he mentioned that the data is there and available for everyone to download, manipulate and have a look through!
+
+Here are a couple of cool graphs to start with about the packages people ask questions about.
+![](https://www.dropbox.com/s/3t1r9q7qv92a2u9/r-packages.png?dl=1)
+
+![](https://www.dropbox.com/s/nu3xn6ai54phj0v/ecosystem.png?dl=1)
+
+Some other interesting point:
+
+* Australia is ranked number 3 in **R** use! The measure took the proportion of contributions to Stack Overflow were about R. Above us was the USA and France.
+
+* There was also some cool traffic data showing the clear relation between wealth of a country and R use. The speaker reckons this is likely to do with the number of people in research/universities in each country as well as developing countries having greater desire for advice in more fundamental programming languages.
+
+*  Washington DC uses A LOT of R. There was a heatmap. It seems like it's the population centre of the R ecosystem.
+
+* Most traffic was from IPs linked to academics and healthcare, then the next largest categories were government and consulting. This makes sense give the large number of talks focused on bio-statistics. However the fastest growing sectors are government and consulting.
+
+* A graph was put up on "competing" packages: "packages found in the answers on the same questions, but not the same answer", which is a proxy measure for people responding with a recommendation to use another package. No surprises here with data.table and dplyr at the top of the rivalry list, followed by tidyr and reshape2. Interesting to note that there is no rivalry for ggplot2.
+
+
+## DataCamp sponsor talk
+Right now there are ~1.15 million students on DataCamp. BOOM!
+My note taking on the proportions being different kinds of students is a little rough but it sounded like 30% were employees of some kind, 20% were full-time students. 800 academics are setting DataCamp for their courses, which makes sense because universities can access them **FOR FREE**. Also there are 200 companies.. not sure if we're one of them.
+
+The speaker also mentioned the short-comings of DataCamp as it currently is with regard to:
+
+* fluency and retention
+
+* extension to open ended projects 
+
+They are working on this by developing bigger projects for students to take more time with and submit, as well as (on the other end of the spectrum) a mobile app which tests you on simple syntax. Kind of like Duolingo for code!
+
+[Linky link here](http://schd.ws/hosted_files/user2017/b3/UseR%20presentation%202017%20%282%29.pdf)
+
+## Teaching Data Science to new useRs
+This was a really awesome talk from Mine Cetinkaya-Rundel. She basically described the perfect first year statistics course for introducing analysis in R so that students keen on data analysis can get their fingers working on data ASAP before/while learning the important mathematics of probability and statistical tests/inference. 
+
+The motivation is to teach a course which is:
+
+* modern
+
+* places data at the centre
+
+* quantitative (not mathematical)
+
+* different from HS stats
+
+* challenging (but not intimidating)
+
+In summary: teach R Studio, tidyverse, Shiny and GitHub.
+
+The package `learnr` is used to teach and monitor student activity allowing fast feedback, course tailoring and long project lengths.
+
+And at the end of the day students walk away with a GitHub repo ready to show employers!
+
+This is a long way from where I started second year stats back in 2011. I was so impressed that I would have asked her out, but alas she works at Duke...
+
+
+## The Navigating R Packages Session
+This was an interesting session to sit in on, at least for the beginning. It seemed like an intervention for the R community: grievances needed to be aired. These issues came under 2 headings: 
+
+* *there's too many packages* -> some need to be unified
+
+* *it's too hard to search for packages*
+
+
+Take-away points:
+
+* there are nearly 11,000 packages on CRAN
+
+* **CRAN Task Views** is a good way to see all of the packages being monitored by one person.
+
+* `sos::findFn` is cool function for searching for packages. It brings up a table as output.
+
+* **CRAN searcher** is an add-in for R Studio which keeps up to date description files to help find packages.
+
+
+The session then became a break-out component for those wishing to help brainstorm ways to fix things. We did not join these, but I was left feeling impressed that the R community were being so pro-active and consultative.
+
+### Side notes:
+* `case_when` looks like a nice alternative to using `replace` or `ifelse`
