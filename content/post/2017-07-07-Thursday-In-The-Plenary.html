@@ -1,0 +1,97 @@
+---
+title: "Thursday In The Plenary"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+
+
+<div id="open-analytics-sponsor-talk" class="section level1">
+<h1>Open Analytics sponsor talk</h1>
+<p>Open Analytics is a consulting group based in Belgium who call themselves open source fundamentalists. The talk went through 2 examples of the kind of projects they do. The first was about parasite worms in Africa. The second was to find out Dutch preferences for different flavours of soup. Turns out Dutch women like Mexican soup, whereas the men don’t mind too much about the flavour.</p>
+<p>Open Analytics also has done some work in scientific programming designing algorithms with R for neuroscience as well as video game called <strong>poissontris</strong> which was version of tetris made using Shiny. We can get it from GitHub if you want a try. #Rgoals</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_170600.jpg?token=AWGs-xZXU1GSwErb-GONApyEl5NgJjQ1ks5ZdoWlwA%3D%3D" alt="One of the temporary tattoos Open Analytics was giving to people at their stall. The mouth is a box and whisker plot! On a cat! Genius!" />
+<p class="caption">One of the temporary tattoos Open Analytics was giving to people at their stall. The mouth is a box and whisker plot! On a cat! Genius!</p>
+</div>
+</div>
+<div id="rstudio-sponsor-talk" class="section level1">
+<h1>RStudio sponsor talk</h1>
+<p>70% of RStudio’s work goes into open source software. Right now they have teams dedicated to tidyverse, Shiny, Education, and community ambassadors</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170704_090626.jpg?token=AWGs-1msyLs0u4i9b03HI_HHIvNTz_WRks5ZdoYNwA%3D%3D" alt="One of the several sponsor logo serviettes from the legends at RStudio" />
+<p class="caption">One of the several sponsor logo serviettes from the legends at RStudio</p>
+</div>
+<p>Their big achievement for the year has been releasing Shiny 1.0.0 as well as Shiny test which checks for issues in Shiny apps. Also paramaterisation features in R markdown reports are new.</p>
+<p>The next big project is going to be <a href="https://www.rstudio.com/products/connect/">RStudio Connect</a> which will be a platform for teams to publish objects online. From the sounds of it this will be most useful for big corporates. At the moment it is in beta.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_153247.jpg?token=AWGs-09IdIlykdaPKvnq2OtDCJDbXEJIks5ZdoY2wA%3D%3D" alt="The uber inspiring mantra of RStudio. Also what I will now have on my resume/headstone/Tinder profile" />
+<p class="caption">The uber inspiring mantra of RStudio. Also what I will now have on my resume/headstone/Tinder profile</p>
+</div>
+</div>
+<div id="parallel-computation" class="section level1">
+<h1>Parallel Computation</h1>
+<p>This talk was given by Norman Matloff the developer behind <code>partools</code> and he had some things to get off his chest.</p>
+<p>He started off by going through a brief explanation of what parallel computing is, why it’s becoming more popular, how modern hardware is better equipped for it, and then what he called his <em>wish list</em>. Well, a wish list from useRs who want all that parallel sweetness good times.</p>
+<ul>
+<li><p>want to run several types of hardware from R</p></li>
+<li><p>want the process to be easy for non-programmers</p></li>
+</ul>
+<p>It was about here when he tried to get the whole room on his side by saying that <em>“some of you are better programmers than my students”</em>, while then soon adding that even for computer scientists this stuff isn’t easy.</p>
+<p>There were 2 methods mentioned:</p>
+<ol style="list-style-type: decimal">
+<li><p>Software Alchemy: <code>partools</code></p></li>
+<li><p>Shared memory: <code>Rdsm</code></p></li>
+</ol>
+<p>Alas, automatic parallelisation with no user interaction is not generally possible and should NOT be expected.</p>
+<p>Then out of nowhere: <em>“To me machine learning is just regression analysis”</em> SHOTS FIRED!!</p>
+<p>He described <strong>Spark</strong> as being very private about their processes which hinders the ability to use it well. The programmers at Spark didn’t actually test whether their service runs faster than running parallel processes on your own hardware. His blunt advice:</p>
+<p><strong>“resist”</strong></p>
+<div id="how-parallel-processing-should-work" class="section level3">
+<h3>How Parallel Processing Should Work</h3>
+<p>What Norm calls the “Common Setting” involves 3 steps:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Manager node: your data frame all in one piece</p></li>
+<li><p>Worker nodes: spliting your data frame into chunks which are sent to different parallel processes</p></li>
+<li><p>Gather worker nodes back into the manager node format</p></li>
+</ol>
+<p>His clear advice is <strong>avoid step c)</strong> and just leave your analysis in chunks until you know what you are doing with the results. This is predominantly because of round-off errors when estimating parameters or models on each chunk and then converting these into values for the whole data frame. Another reason which came up later is that the <code>partools</code> package randomly allocates rows to chunks which can become an issue for being able to tell the characteristics of each chunk.</p>
+<p>Package comparison (he admits it’s pretty biased):</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Package</th>
+<th align="center">Flexibility</th>
+<th align="center">High-level ops</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">partools</td>
+<td align="center">high</td>
+<td align="center">few</td>
+</tr>
+<tr class="even">
+<td align="center">ddr</td>
+<td align="center">medium</td>
+<td align="center">some</td>
+</tr>
+<tr class="odd">
+<td align="center">multidlyer</td>
+<td align="center">low</td>
+<td align="center">many</td>
+</tr>
+</tbody>
+</table>
+<p>By flexibility I believe he means between systems (robustness of processes), and high-level ops refers to both ease of use and the number of operations that work with the package.</p>
+<p>And final recommendations,</p>
+<ul>
+<li><p>for computational calculations use “software alchemy”</p></li>
+<li><p>for aggregation processes use distributed files</p></li>
+</ul>
+<p>He concluded his speaking points the line came up on the slides <em>“I am now ready for dissent”</em> to which there were a few who answered saying the Spark does explain what their processes are and that round-off errors can be dealt with in the modern processes (this was put up by a guy working at IBM). Alas, Norm stood his ground.</p>
+<p>I left the planery feeling like we just been told Hadoop and Spark are a rip-off, parallel processing is really hard and the you should only try it if you need to do something really simple, and that it’s not worth investing time in learning the details of the process because it’s complicated as hell. Some people I talked to after felt that Norm is a bit of an old fusspot who is too skeptical of change.</p>
+<p>Link to the full presentation is <a href="http://schd.ws/hosted_files/user2017/f2/Slides.pdf">here</a></p>
+</div>
+</div>

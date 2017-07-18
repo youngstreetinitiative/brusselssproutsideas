@@ -1,0 +1,41 @@
+---
+title: "Data Wrangling 2: Data frame management"
+author: "Jackson"
+date: "2017-07-10"
+output: html_document
+---
+
+
+
+<div id="codebookr-codebooks-in-r" class="section level2">
+<h2>`codebookr: Codebooks in R</h2>
+<p>According to the <a href="http://methods.sagepub.com/reference/encyclopedia-of-survey-research-methods/n69.xml">Encyclopedia of Survey Research Methods</a> a <em>codebook</em> is: <strong>“At the most basic level, a codebook describes the layout of the data in the data file and describes what the data codes mean. Codebooks are used to document the values associated with the answer options for a given survey question.”</strong> Which basically means an excel file with columns describing the variable name and other things.</p>
+<p>This obviously sounds very familiar with our experience using HILDA.</p>
+<p>The package <code>codebookr</code> allows reading in an excel spreadsheet with details about a data frame such as variable names, labels, units, factor level/category labels, date formats, limits. The function is <code>read_codebook</code>. Then you can use the function <code>create_factors</code> to check the levels and limits comply to what was in the codebook.</p>
+<p>Essentially you are applying metadata to a data set you read in.</p>
+<p>This talk was given by one of the only other Australia at the conference: Peter Baker at The University of Queensland’s School of Public Health. I approached him later to ask a question on my mind, what if you want to go the other way and create a code book from a given data frame? Unfortunately he doesn’t know of any nice solutions to this. I believe I have found a gap in the <em>‘package market’</em> as a think it would be really useful to produce a variable summary doc automatically as you go through your analysis creating/mutating variables.</p>
+<p>The presentation slides are <a href="https://schd.ws/hosted_files/user2017/9d/pbaker_user2017-2_ioslides.html#1">here</a>.</p>
+</div>
+<div id="show-me-the-errors-you-dont-look-for" class="section level2">
+<h2>Show Me The Errors You Don’t Look For</h2>
+<p>Data cleaning made super easy! It’s a claim that I think the package<code>dataMaid</code> gets bloody close to satisfying. In one line of code (the <code>clean</code> <a href="https://cran.r-project.org/package=dataMaid">function</a>) r will produce an html (through R Markdown) file with summaries of how all of the variables. In their last project the creators produced a 1,800 page document for a client which they were very proud of! The clients less so..</p>
+<p>Their manifesto: data.frame -&gt; summarise -&gt; visualise</p>
+<p>Each variable has a section with a summary table, some kind of plot, notes about infrequent observations/outliers, case differences e.g. OTHER vs other. <code>clean</code> does not mutate the data frame. You can also add in your own checks and select specific variables to include or leave out.</p>
+<p>In essence: <strong>42</strong> We have the answers but need to figure out what was the question.</p>
+<p>Presentation <a href="http://schd.ws/hosted_files/user2017/29/Show%20me%20the%20errors%20you%20didn%E2%80%99t%20look%20for%21.pdf">here</a></p>
+</div>
+<div id="daff" class="section level2">
+<h2>Daff</h2>
+<p><a href="https://cran.r-project.org/package=daff"><code>Daff</code></a> is <code>diff</code> for data frames. You use the command <code>render_diff</code> to see changes for version control of data frames and <strong>log changes</strong></p>
+<p>You start with new raw data -&gt; nothing structural has changed -&gt; do your work -&gt; use the function <code>diff_data</code> and then <code>print()</code> to read what has been changed which will look just like diffs in a commit screen.</p>
+<p>You can also tell it what to ignore i.e. just look for unexpected changes.</p>
+<p>There is also a <code>differ_from</code> function when piping.</p>
+<p>Finally there was a recommendation to have a try of the package <code>diffobj</code> which has some good visualisations.</p>
+<p>Preso <a href="https://schd.ws/hosted_files/user2017/09/daff.pdf">Here</a></p>
+</div>
+<div id="datacomparer" class="section level2">
+<h2><code>dataCompareR</code></h2>
+<p>This is a similar package to <code>clean</code> but probably a bit nicer/prettier. It’s not on CRAN yet, but soon. It was built during a 2 day hackathon at the company Capital One’s open data science team.</p>
+<p>They claim to be able to create a rich summary of differences in an html output with a breakdown by columns with examples.</p>
+<p>Sides are <a href="http://schd.ws/hosted_files/user2017/78/business_reporting_605.pdf">here</a></p>
+</div>
