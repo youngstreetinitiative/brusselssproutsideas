@@ -29,6 +29,8 @@ It's not available yet.
 ## Visualisation of Statistical Models
 By Przemyslaw Biecek
 
+![The flow diagram of statistical model visualisation](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_111819.jpg?token=AWGs-xomXNmVpPlI3yNAusDXAMkm54b5ks5ZdocswA%3D%3D)
+
 This was a great summary of a bunch on packages for plotting data with fitted models
 
 `ggfortify` looks great for diagnostic plots for fitted models and is sophisticated enough to give different things for different models (e.g. lm, glmnet, aareg)

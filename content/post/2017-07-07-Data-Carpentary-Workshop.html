@@ -1,0 +1,77 @@
+---
+title: "Data Carpentary tutorial"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+
+
+<div id="data-carpentary-tutorial" class="section level1">
+<h1>Data Carpentary Tutorial</h1>
+<div id="tuesday-day-1" class="section level2">
+<h2>Tuesday Day 1</h2>
+<p>At the end of the day the data carpentry tutorial will mainly be useful to YSI for again, making sure, we are getting the basics of workflow management right. Much of the material in the workshop I had already been exposed to (mostly through Nathan and Ross’s guidance). On that note what will follow is a set of important take-aways.</p>
+</div>
+<div id="documentation" class="section level2">
+<h2>Documentation</h2>
+<ol style="list-style-type: decimal">
+<li>Documentation is generally stored best as plain text rather than word or PDF. Now of course this is obvious and mandatory when working with repos, but worth keeping in mind as we may look into introducing codebooks and summary tables</li>
+<li>Best practice is to put text and code in the documentation. I think we’re a hold of this one.</li>
+<li>Be clear about assertions involved in the data analysis. e.g. how to deal with ‘odd’ points, or treatment of NA’s, or filters.</li>
+<li>For large datasets there is a Unix tool <code>make</code>. <code>make</code> will modularise data manipulations to read into R markdown</li>
+<li>Setting parameters at the top of an R markdown file will be very useful to make reports for specific subsets or a random sample of a dataset. You can also put R code into the parameters line.</li>
+<li>You can make tables from <code>summarise</code> functions look really, really nice using knitr::kable()</li>
+</ol>
+</div>
+<div id="organisation-best-practices" class="section level2">
+<h2>Organisation: best practices</h2>
+<div id="file-naming" class="section level3">
+<h3>File naming</h3>
+<p>File naming conventions are definitely an area for improvement at YSI. I really like the convention rules from the workshop, based on hierarchy. For example (from bio of course) say you have an experiment</p>
+<p>of a certain type <code>BRAFAssay</code>,</p>
+<p>done on a certain date,</p>
+<p>with certain plasmid treatment <code>Plasmid-CL56</code>,</p>
+<p>which is one of many samples of the same treatment <code>A1</code>.</p>
+<p>A good name for the datafile would be <code>BRAFAssay_2017-07-04_Plasmid-CL56_A1.csv</code>. We put the highest level of the hierarchy first. This makes meta-analysis of data files, and in our cases scripts and graph sets, and even presentations, much easier.</p>
+</div>
+<div id="automation" class="section level3">
+<h3>Automation</h3>
+<p>Automating R markdown is best practice for self-documenting when possible. Automating testing with <code>test_that</code> sounds like something we should check out. <code>test_that</code> runs lots of tests on scripts and returns where the problems are.</p>
+</div>
+<div id="version-control" class="section level3">
+<h3>Version control</h3>
+<p>A tip from here worth considering: whenever there is a significant edit to a data analysis folder save the older folder version (dated) and zip it. Also on the folder size issue, don’t commit html files to repo until the point of publication #pro-tip</p>
+</div>
+<div id="how-to-publish" class="section level3">
+<h3>How to publish</h3>
+<p>The presenters argue for use of non-proprietary formats i.e. not PDF or Office or image formats.</p>
+</div>
+<div id="licensing" class="section level3">
+<h3>Licensing</h3>
+<p>Respect the community norms of referencing package creators. I didn’t know this was a thing. We should know this is a thing. Of course at the conference there is also recommendations that best practice is to publish your code, even if it is proprietary.</p>
+</div>
+<div id="package-loading" class="section level3">
+<h3>Package loading</h3>
+<p>vignette is a word getting thrown around A LOT among the peeps. The pro-tip is set up a message when a package is loading which is a vignette of what the package is doing.</p>
+<p>The material for the workshop is <a href="https://fmichonneau.github.io/2017-useR-tutorial/">here</a>.</p>
+</div>
+</div>
+<div id="packages-mentioned" class="section level2">
+<h2>Packages mentioned</h2>
+<ul>
+<li><code>projectTemplate</code></li>
+<li><code>remake</code> (not on CRAN) for testing if a file runs in different sessions</li>
+<li><code>rfigshare</code> for uploading datasets to Figshare which apparently allows yuge files</li>
+</ul>
+<div id="side-notes" class="section level3">
+<h3>Side notes:</h3>
+<ul>
+<li><code>replace</code> function is probably better than <code>ifelse</code> within a mutate for odd values</li>
+<li>I have in my notes to look over data-raw. I think this is to do with conventions around storing neatly made .csvs.</li>
+<li>People have written bots which actively search for passwords on public GitHub repos!</li>
+<li>GitHub repos have the clear weakness of not being secure in the long-term. So short to medium term is cool, but longer term organisational servers are needed</li>
+</ul>
+</div>
+</div>
+</div>

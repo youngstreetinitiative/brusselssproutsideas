@@ -1,5 +1,5 @@
 ---
-title: "Friday in the Planery"
+title: "Friday in the Plenary"
 author: "Jackson"
 date: "2017-07-07"
 output: html_document
@@ -57,12 +57,16 @@ Now the question on a few people's lips: what keeps CRAN free of malware?
 
 Below sums up the festivities:
 
------> the picture of the slide about beer consumption goes here
+![Important data points from the conference](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170707_142559.jpg?token=AWGs-3LX0of0PHDz-Ojh7VHROo-f495iks5ZdoeTwA%3D%3D)
 
-Nick Teirney was called to the stage to amp up the crowd about useR!2017 in Brisbane. He kept on the beverages-as-an-incentive theme by describing the location as within 400m of about 50 bars, and rightly commenting on Australia's premo coffee culture.
+Nick Teirney was called to the stage to amp up the crowd about useR!2018 in Brisbane. He kept on the beverages-as-an-incentive theme by describing the location as within 400m of about 50 bars, and rightly commenting on Australia's premo coffee culture.
 
------> put the pic of the Brisbane poster here
+![Poster for next year's conference in Brissy](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_170645.jpg?token=AWGs-9fYguCuW6X6O3mEK3hnqo7G_TCnks5ZdofFwA%3D%3D)
 
-Many many many times throughout the conference people said something like "well it's great the conference is so close for you next year!" I take 2 things from this: 1) this year was very very Euro focused and next year it will be interesting to see how many people from outside the Asia-Pacific make it over (it could be a bigger year for Asian useRs which would be cool!); 2) we should really have a crack at melding into the R community in Australia, starting with getting involved in MeetUps in Sydney, which will be a great way to gear up our skills.
+Many many many times throughout the conference people said something like "well it's great the conference is so close for you next year!" I take 2 things from this: 
+
+1)  this year was very very Euro focused and next year it will be interesting to see how many people from outside the Asia-Pacific make it over (it could be a bigger year for Asian useRs which would be cool!)
+
+2)  we should really have a crack at melding into the R community in Australia, starting with getting involved in MeetUps in Sydney, which will be a great way to gear up our skills.
 
 

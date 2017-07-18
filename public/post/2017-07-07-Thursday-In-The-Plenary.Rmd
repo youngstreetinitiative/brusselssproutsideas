@@ -1,0 +1,89 @@
+---
+title: "Thursday In The Plenary"
+author: "Jackson"
+date: "2017-07-07"
+output: html_document
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+# Open Analytics sponsor talk
+Open Analytics is a consulting group based in Belgium who call themselves open source fundamentalists. The talk went through 2 examples of the kind of projects they do. The first was about parasite worms in Africa. The second was to find out Dutch preferences for different flavours of soup. Turns out Dutch women like Mexican soup, whereas the men don't mind too much about the flavour.
+
+Open Analytics also has done some work in scientific programming designing algorithms with R for neuroscience as well as video game called **poissontris** which was version of tetris made using Shiny. We can get it from GitHub if you want a try. #Rgoals
+
+![One of the temporary tattoos Open Analytics was giving to people at their stall. The mouth is a box and whisker plot! On a cat! Genius!](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_170600.jpg?token=AWGs-xZXU1GSwErb-GONApyEl5NgJjQ1ks5ZdoWlwA%3D%3D) 
+
+# RStudio sponsor talk
+70% of RStudio's work goes into open source software.
+Right now they have teams dedicated to tidyverse, Shiny, Education, and community ambassadors
+
+![One of the several sponsor logo serviettes from the legends at RStudio](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170704_090626.jpg?token=AWGs-1msyLs0u4i9b03HI_HHIvNTz_WRks5ZdoYNwA%3D%3D)
+
+Their big achievement for the year has been releasing Shiny 1.0.0 as well as Shiny test which checks for issues in Shiny apps. Also paramaterisation features in R markdown reports are new.
+
+The next big project is going to be [RStudio Connect](https://www.rstudio.com/products/connect/) which will be a platform for teams to publish objects online. From the sounds of it this will be most useful for big corporates. At the moment it is in beta.
+
+![The uber inspiring mantra of RStudio. Also what I will now have on my resume/headstone/Tinder profile](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/20170706_153247.jpg?token=AWGs-09IdIlykdaPKvnq2OtDCJDbXEJIks5ZdoY2wA%3D%3D)
+
+# Parallel Computation
+This talk was given by Norman Matloff the developer behind `partools` and he had some things to get off his chest. 
+
+He started off by going through a brief explanation of what parallel computing is, why it's becoming more popular, how modern hardware is better equipped for it, and then what he called his *wish list*. Well, a wish list from useRs who want all that parallel sweetness good times. 
+
+* want to run several types of hardware from R
+
+* want the process to be easy for non-programmers
+
+It was about here when he tried to get the whole room on his side by saying that *"some of you are better programmers than my students"*, while then soon adding that even for computer scientists this stuff isn't easy.
+
+There were 2 methods mentioned:
+
+1.  Software Alchemy: `partools`
+
+2.  Shared memory: `Rdsm`
+
+Alas, automatic parallelisation with no user interaction is not generally possible and should NOT be expected.
+
+Then out of nowhere: *"To me machine learning is just regression analysis"* SHOTS FIRED!!
+
+He described **Spark** as being very private about their processes which hinders the ability to use it well. The programmers at Spark didn't actually test whether their service runs faster than running parallel processes on your own hardware. His blunt advice: 
+
+**"resist"**
+
+### How Parallel Processing Should Work
+What Norm calls the "Common Setting" involves 3 steps:
+
+a)  Manager node: your data frame all in one piece
+
+b)  Worker nodes: spliting your data frame into chunks which are sent to different parallel processes
+
+c)  Gather worker nodes back into the manager node format
+
+His clear advice is **avoid step c)** and just leave your analysis in chunks until you know what you are doing with the results. This is predominantly because of round-off errors when estimating parameters or models on each chunk and then converting these into values for the whole data frame. Another reason which came up later is that the `partools` package randomly allocates rows to chunks which can become an issue for being able to tell the characteristics of each chunk.
+
+
+Package comparison (he admits it's pretty biased):
+
+| Package  | Flexibility | High-level ops |
+|:--------:|:-----------:|:--------------:|
+| partools |    high     | few            |
+| ddr      |    medium   | some           |
+|multidlyer|    low      | many           |
+By flexibility I believe he means between systems (robustness of processes), and high-level ops refers to both ease of use and the number of operations that work with the package.
+
+And final recommendations,
+
+* for computational calculations use "software alchemy"
+
+* for aggregation processes use distributed files
+
+He concluded his speaking points the line came up on the slides *"I am now ready for dissent"* to which there were a few who answered saying the Spark does explain what their processes are and that round-off errors can be dealt with in the modern processes (this was put up by a guy working at IBM). Alas, Norm stood his ground.
+
+I left the planery feeling like we just been told Hadoop and Spark are a rip-off, parallel processing is really hard and the you should only try it if you need to do something really simple, and that it's not worth investing time in learning the details of the process because it's complicated as hell. Some people I talked to after felt that Norm is a bit of an old fusspot who is too skeptical of change. 
+
+Link to the full presentation is [here](http://schd.ws/hosted_files/user2017/f2/Slides.pdf)
