@@ -2,78 +2,78 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Brussels Sprouts Ideas</title>
-    <link>/post/</link>
+    <link>http://brussels-sprouts-ideas.netlify.com/post/</link>
     <description>Recent content in Posts on Brussels Sprouts Ideas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 10 Jul 2017 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://brussels-sprouts-ideas.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Data Wrangling 2: Data frame management</title>
-      <link>/post/2017-07-10-data-wrangling-2-data-frame-management/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-data-wrangling-2-data-frame-management/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-10-data-wrangling-2-data-frame-management/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-data-wrangling-2-data-frame-management/</guid>
       <description>`codebookr: Codebooks in RAccording to the Encyclopedia of Survey Research Methods a codebook is: “At the most basic level, a codebook describes the layout of the data in the data file and describes what the data codes mean. Codebooks are used to document the values associated with the answer options for a given survey question.” Which basically means an excel file with columns describing the variable name and other things.</description>
     </item>
     
     <item>
       <title>Government Data</title>
-      <link>/post/2017-07-10-government-data/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-government-data/</link>
       <pubDate>Mon, 10 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-10-government-data/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-government-data/</guid>
       <description>This is collection of 4 5 minute lightening talks which are very very relevant to our work.
 rOpenGov: Community Project for Open Government DataThis is a presentation by a Finnish guy Leo Lahti who claims the project is aiming to foster a community rather than a package. They have created a package called eurostat which pulled publicly accessible data from all over the EU. They had no plan to make it, but the community of interested researchers working on their own packages to read public data had built to such a point that it just happened!</description>
     </item>
     
     <item>
       <title>Data Carpentary tutorial</title>
-      <link>/post/2017-07-07-data-carpentary-workshop/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-data-carpentary-workshop/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-07-data-carpentary-workshop/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-data-carpentary-workshop/</guid>
       <description>Data Carpentary TutorialTuesday Day 1At the end of the day the data carpentry tutorial will mainly be useful to YSI for again, making sure, we are getting the basics of workflow management right. Much of the material in the workshop I had already been exposed to (mostly through Nathan and Ross’s guidance). On that note what will follow is a set of important take-aways.
 DocumentationDocumentation is generally stored best as plain text rather than word or PDF.</description>
     </item>
     
     <item>
       <title>Friday in the Plenary</title>
-      <link>/post/2017-07-07-friday-in-the-plenary/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-friday-in-the-plenary/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-07-friday-in-the-plenary/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-friday-in-the-plenary/</guid>
       <description>R Consortium sponsor talkThe R Consortium is a not-for-profit organisation which funds most of the key infrastructure for the R Project. Sponsors include IBM, Microsoft, Google, RStudio as well as several tech firms and data consultancies. They exist as a group of business enterprises interested in R thriving in the long-term. In essence a way for businesses who use R to contribute back. They see themselves as the link between the R Foundation, Industry and the R Community.</description>
     </item>
     
     <item>
       <title>Thursday In The Plenary</title>
-      <link>/post/2017-07-07-thursday-in-the-plenary/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-07-thursday-in-the-plenary/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/</guid>
       <description>Open Analytics sponsor talkOpen Analytics is a consulting group based in Belgium who call themselves open source fundamentalists. The talk went through 2 examples of the kind of projects they do. The first was about parasite worms in Africa. The second was to find out Dutch preferences for different flavours of soup. Turns out Dutch women like Mexican soup, whereas the men don’t mind too much about the flavour.</description>
     </item>
     
     <item>
       <title>Wednesday in the Plenary</title>
-      <link>/post/2017-07-07-wednesday-in-the-plenary/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-wednesday-in-the-plenary/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-07-wednesday-in-the-plenary/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-wednesday-in-the-plenary/</guid>
       <description>Microsoft sponsor talk given by David SmithDavid Smith is a ledge. An Aussie going with a love for R, who got picked up by Microsoft a few years ago. From the sounds of his talk Microsoft has been almost completely converted to R and now spends a lot of money on keeping the R project humming along.
 R is now integrated into many aspects of Microsoft for “intelligence” which basically means analysis and forecasting/</description>
     </item>
     
     <item>
       <title>Workflow and Repository Management Talks</title>
-      <link>/post/2017-07-08-workflow-and-repository-management-talks/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-08-workflow-and-repository-management-talks/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-07-08-workflow-and-repository-management-talks/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-08-workflow-and-repository-management-talks/</guid>
       <description>Ensemble PackagesThe first presentation I went to on workflow was a review of best practice in package development. Essentially the speaker was talking the benefits of ensemble packages which load multiple packages you need all at once so that all steps of a project can be conducted by calling the one package. This includes extensions to:
 graphical user interfaces
 methodology comparison
@@ -83,20 +83,20 @@ R is now integrated into many aspects of Microsoft for “intelligence” which 
     
     <item>
       <title>Labour Mobility Second Test. Bigger and bigglier. NO SHAME!</title>
-      <link>/post/2017-06-28-labour-mobility-2/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility-2/</link>
       <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-06-28-labour-mobility-2/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility-2/</guid>
       <description>Labour Mobility in Australia from 1975-2016 Continued…Graphs still needs to be adjusted for:
 Lack of data between 1987 and 1994Inclusion of change in locality but not employer individuals from 1994 to 2004ChangeEmpIndustry &amp;lt;- LabMobIndustryABS %&amp;gt;% mutate(Date=as.Date(Date,format=&amp;quot;%d/%m/%Y&amp;quot;),Agriculture=Agriculture_ChangeEmp/Agriculture_Count,MiningUtilities=MiningUtilities_ChangeEmp/MiningUtilities_Count,Manufacturing=Manufacturing_ChangeEmp/Manufacturing_Count,Construction=Construction_ChangeEmp/Construction_Count,WholesaleRetail=WholesaleRetail_ChangeEmp/WholesaleRetail_Count,TransportStorageCommunications=TransportStorageCommunications_ChangeEmp/TransportStorageCommunications_Count,FinanceBusinessServ=FinanceBusinessServ_ChangeEmp/FinanceBusinessServ_Count,CommunityServ=CommunityServ_ChangeEmp/CommunityServ_Count,PublicAdmin=PublicAdmin_ChangeEmp/PublicAdmin_Count,EntertainmentHotelsPersonalServ=EntertainmentHotelsPersonalServ_ChangeEmp/EntertainmentHotelsPersonalServ_Count) %&amp;gt;% select(Date,Agriculture,MiningUtilities,Manufacturing,Construction,WholesaleRetail,TransportStorageCommunications,FinanceBusinessServ,CommunityServ,PublicAdmin,EntertainmentHotelsPersonalServ) %&amp;gt;%gather(key=Industry,value=Proportion,-Date)ggplot(ChangeEmpIndustry %&amp;gt;% filter(Industry %in% c(&amp;quot;Agriculture&amp;quot;,&amp;quot;MiningUtilities&amp;quot;,&amp;quot;Manufacturing&amp;quot;,&amp;quot;TransportStorageCommunications&amp;quot;,&amp;quot;Construction&amp;quot;)),aes(x=Date,y=Proportion,colour=Industry))+geom_line() + scale_y_continuous(limits=c(0,0.26),breaks=c(seq(0,0.25,0.05)),labels=scales::percent)+scale_x_date(breaks = date_breaks(&amp;quot;3 years&amp;quot;),labels=date_format(&amp;quot;%Y&amp;quot;))+ylab(&amp;quot;Proportion of Workers Employed at Survey&amp;quot;)+xlab(&amp;quot;Year&amp;quot;)+theme(legend.</description>
     </item>
     
     <item>
       <title>Labour Mobility Test Post. HUGE!</title>
-      <link>/post/2017-06-28-labour-mobility/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/</link>
       <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-06-28-labour-mobility/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility/</guid>
       <description>Labour Mobility in Australia from 1975-2016The Australian Bureau of Statistics has run the Labour Mobility Survey alongside the monthly Labour Force Survey on a semi-frequent basis over the past 40 years.
 The following data comes from report available online for the years 1994 onward (as catalogue number 6209.0). Data points before 1994 come from printed reports held by the Library of New South Wales.
 Changed employerABSLabourMobility &amp;lt;- ABSLabourMobility %&amp;gt;%mutate(PropChangedEmp=ChangedEmp/Employed)ggplot(subset(ABSLabourMobility,!</description>
@@ -104,10 +104,10 @@ Changed employerABSLabourMobility &amp;lt;- ABSLabourMobility %&amp;gt;%mutate
     
     <item>
       <title>Best Test Posts There Ever Was. Biggly!</title>
-      <link>/post/2017-06-27-jwtestertest/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/</link>
       <pubDate>Tue, 27 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-06-27-jwtestertest/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-27-jwtestertest/</guid>
       <description>Thoughts and feelingsBelgium: land of chocolate, fries, waffles and beer. Oh how it calls from across the oceans and skies to our glassy nest in Waterloo. It would not take Hercule Poirot to see that our adventures will lead us to new discoveries… of the R kind. My excitement level can be calculated as follows:
 \(x = \lambda { \rho ^{2\sigma}}/\sqrt{Nintendo64}\)
 Where variables are defined as follows:
@@ -116,10 +116,10 @@ Where variables are defined as follows:
     
     <item>
       <title>newpost</title>
-      <link>/post/2017-06-23-testpost/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/</link>
       <pubDate>Fri, 23 Jun 2017 00:00:00 +0000</pubDate>
       
-      <guid>/post/2017-06-23-testpost/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-06-23-testpost/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 When you click the Knit button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min.</description>
@@ -127,10 +127,10 @@ summary(cars)## speed dist ## Min.</description>
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
       <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>

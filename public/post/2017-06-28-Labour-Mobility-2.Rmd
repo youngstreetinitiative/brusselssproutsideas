@@ -7,16 +7,16 @@ output: html_document
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
 library(RCurl)
 library(tidyverse)
 library(scales)
 
-LabMobABS <- read.csv(url("https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/Data/LabourMobility.csv?token=AWGs-0Swr2R_efVrTtNE5FY1epy8Kuyqks5ZXJSBwA%3D%3D"))
+LabMobABS <- read.csv("C:/Users/User/Documents/GitHub/brusselssproutsideas/data/LabourMobility.csv")
 
-LabMobIndustryABS <- read.csv(url("https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/Data/Labour%20Mobility%20By%20Industry.csv?token=AWGs-0kHmTZS7oyZmygIunKuHwU2rjd0ks5ZXJQ-wA%3D%3D"))
+LabMobIndustryABS <- read.csv("C:/Users/User/Documents/GitHub/brusselssproutsideas/data/Labour Mobility By Industry.csv")
 
-ReasonCeasedEmpABS <- read.csv(url("https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/Data/Reasons%20Ceasing%20Employment.csv?token=AWGs-8buS4tZltJD7XxtdbnPkNDP_FzDks5ZXJSowA%3D%3D"))
+ReasonCeasedEmpABS <- read.csv("C:/Users/User/Documents/GitHub/brusselssproutsideas/data/Reasons Ceasing Employment.csv")
 
 ABSLabourMobility <- merge(LabMobABS,merge(LabMobIndustryABS,ReasonCeasedEmpABS,all = T),all = T) %>% 
   mutate(Date=as.Date(Date,format="%d/%m/%Y")) %>% arrange(Date)
