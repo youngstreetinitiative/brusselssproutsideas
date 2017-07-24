@@ -1,0 +1,12 @@
+base
+bitops
+RCurl
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+scales
+bindrcpp
