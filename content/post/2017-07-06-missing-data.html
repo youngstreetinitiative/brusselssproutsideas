@@ -1,0 +1,134 @@
+---
+title: "Missing Data"
+author: "Nathan"
+date: "2017-07-06"
+output: 
+  html_document:
+    toc: true
+    number_sections: false
+    toc_depth: 2
+    highlight: tango
+    css: custom.css
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<p>There are a number of different options available for dealing with missing data. Here are four we encountered on Thursday at the conference:</p>
+<div id="narnia-dealing-with-missing-data" class="section level2">
+<h2><code>narnia</code>: Dealing with missing data</h2>
+<p><a href="https://talks.updog.co/user2017/2017-07-06-user.html#1">The talk can be found in xaringan form here</a></p>
+<p><em>Nicholas Tierney, Monash University</em></p>
+<p>Nick’s a brilliant individual whom several of us have encountered at different conferences now, and he was here to show us two of his packages: <code>visdat</code> and <code>narnia</code></p>
+<p>First of all, we were introduced to an R package for analysing Aussie weather data - <a href="http://github.com/ToowoombaTrio/BOMRang"><code>BOMRang</code></a> - which sounded kind of brilliant. Not necessarily relevant to our work just yet, though!</p>
+<p><a href="!http://talks.updog.co/user2017/2017-07-06-useR_files/figure-html/unnamed-chunk-3-1.png"></a></p>
+<p>One of the main points Nick raised was that it’s always worth identifying the ‘missingness mechanism’, i.e. why is the data missing? (e.g. Wind gusts breaking the air temp gauge when wind gets too high).</p>
+<p><code>visdat</code> allows you to visualise an entire data frame at once, and see where the gaps in your data occur. The two main features of his <code>visdat</code> package:</p>
+<ul>
+<li><code>vis_dat</code> gives you a snapshot of the data, its class, and what variable it occupies</li>
+<li><code>vis_miss</code> shows you which parts of that data are missing</li>
+</ul>
+<p>If values in a bivariate plot are missing, you can move points with value NA below the minimum so that they can all be plotted on the same axis.</p>
+<p>Shadow values (imputed values in place of missing ones) can be displayed by using <code>bind_shadow</code> if you’re concerned about the method of imputation and how the results might be affected.</p>
+<p><code>geom_missing_point</code> is a quick way to get a look at missing values and structures.</p>
+<p>The primary aim is to be able to identify ‘missingness’ while not breaking out of our existing workflow, maintaining a tidy approach throughout the process.</p>
+<p>Links:</p>
+<ul>
+<li><a href="http://github.com/njtierney/visdat"><code>visdat</code></a></li>
+<li><a href="http://github.com/njtierney/narnia"><code>narnia</code></a></li>
+</ul>
+</div>
+<div id="easy-imputation-with-the-simputation-package" class="section level2">
+<h2>Easy imputation with the <code>simputation</code> package</h2>
+<p><a href="http://github.com/markvanderloo"><em>Mark van der Loo, Statistics Netherlands</em></a></p>
+<p>Mark presented on two packages, the primary focus being on <code>simputation</code> with a supplementary look at <code>lumberjack</code>.</p>
+<p><code>simputation</code> command <code>impute_&lt;model&gt;</code> (e.g. impute_lm for linear model) is the base command of the package, and can be used with a number of different models:</p>
+<ul>
+<li><code>impute_lm(other.revenue ~ turnover + staff)</code></li>
+<li>These imputations can be chained! (Love a bit of <code>%&gt;%</code>!)</li>
+</ul>
+<p>Current methods available:</p>
+<ul>
+<li>model-based</li>
+<li>multivariate</li>
+<li>donor imputation</li>
+<li>median imputation</li>
+<li>proxy imputation</li>
+</ul>
+<p><code>lumberjack</code> is a pipe operator that logs changes in data, using <code>%&gt;&gt;%</code> instead of the normal pipe. Commands include the self-explanatory <code>start_log</code>, <code>stop_log</code> and <code>dump_log</code> (save to file).</p>
+<ul>
+<li>dump_log saves a csv of all the changes in the data and the timestamps they correspond to</li>
+</ul>
+<p>Perhaps most importantly, <code>lumberjack</code> can be used with or without the <code>simputation</code> package!</p>
+<p>Getting started with <code>simputation</code>:</p>
+<pre class="r"><code>install.packages(&quot;simputation&quot;, dependencies = T)
+install.packages(&quot;lumberjack&quot;)
+
+vignette(&quot;intro&quot;, package = &quot;simputation&quot;)
+vignette(&quot;intro&quot;, package = &quot;lumberjack&quot;)</code></pre>
+<p>Links:</p>
+<ul>
+<li><a href="http://github.com/markvanderloo/simputation"><code>simputation</code></a></li>
+<li><a href="http://github.com/markvanderloo/lumberjack"><code>lumberjack</code></a></li>
+</ul>
+</div>
+<div id="generating-missing-values-for-simulation-purposes-a-multivariate-amputation-procedure" class="section level2">
+<h2>Generating missing values for simulation purposes: a multivariate amputation procedure</h2>
+<p><a href="http://github.com/rianneschouten"><em>Rianne Schouten, Utrecht University</em></a></p>
+<p>Honestly, I didn’t entirely understand this talk. However, I gathered that the point was to <em>introduce</em> missing values into your dataset for the purpose of checking the methods of missingness. Rianne probably best explains this herself in the vignette for the package:</p>
+<blockquote>
+<p>The basic idea of ampute is the generation of missingness patterns. Each pattern is a combination of missingness on specific variables while other variables remain complete. For example, someone could have forgotten the last page of a questionnaire, resulting in missingness on a specific set of questions. Another missingness pattern could occur when someone is not willing to answer private questions. Or when a participant misses a wave in a longitudinal study. In other words, each pattern is a specific combination of missing and complete variables.</p>
+</blockquote>
+<p>The methodology is quoted below from her <code>ampute</code> vignette:</p>
+<blockquote>
+<p>In general, a missing data methodology is evaluated by means of simulations. Such simulation studies generally have four steps:</p>
+<ol style="list-style-type: decimal">
+<li>A multivariate, complete data set is simulated and considered the population of interest.</li>
+<li>This data set is then made incomplete.</li>
+<li>The incomplete data are estimated by means of the missing data method.</li>
+<li>Statistical inferences are obtained for the original, complete data set and after dealing with the missing values. A comparison of these inferences gives an indication of the performance of the missing data method.</li>
+</ol>
+</blockquote>
+<p>One important thing you have to understand before going any further is the difference between MAR, MCAR and MNAR (which I did not, before this talk):</p>
+<ul>
+<li>MAR: Missing At Random
+<ul>
+<li>The missingness of the data is not at all related to the values in the data; there is no observable relationship. Nothing makes the data more likely to be missing than other parts of the data.</li>
+</ul></li>
+<li>MCAR: Missing Completely At Random
+<ul>
+<li>The missingness of the data is related to the observed values, but not to the missing data itself. Whether an observation is missing has nothing to do with the missing values, but it does have to do with the values of an individual’s observed variables.</li>
+</ul></li>
+<li>MNAR: Missing Not At Random
+<ul>
+<li>The missingness of the data is related to the propensity of a variable to be missing and its values (e.g. kids who don’t get vaccinations are kids who are more likely to miss schooling). You have to include some model for why the data are missing and what the likely values are.</li>
+</ul></li>
+</ul>
+<p>Now we can move on to <code>ampute</code>’s arguments:</p>
+<ul>
+<li><code>data</code>: feed function complete data</li>
+<li><code>prop</code>: define missingness proportion</li>
+<li><code>patterns</code>: specify missing data patterns</li>
+<li><code>freq</code>: specify relative occurrence of these patterns</li>
+<li><code>mech</code>: choose between MCAR, MAR and MNAR mechanisms</li>
+<li><code>weights</code>: specify weights for calculation of weighted sum scores</li>
+<li><code>type</code>: choose RIGHT, MID, TAIL or LEFT logistic distribution function</li>
+</ul>
+<p>Sounds helpful for HILDA, doesn’t it?</p>
+</div>
+<div id="how-to-deal-with-missing-data-in-time-series-the-imputets-package" class="section level2">
+<h2>How to deal with missing data in time series: the <code>imputeTS</code> package</h2>
+<p>As you may have guessed from the snazzy title, this package is for imputing missing data in time series datasets!</p>
+<p><code>imputeTS</code> is for dealing with univariate data. However, it’s important to note that time itself is not the variable in question, but rather an extra variable that must be considered part of the data when analysing it. As Steffen said in the talk, “For MCAR/MNAR/MAR to be determined, time has to be considered as a variable”.</p>
+<p>The <code>imputeTS</code> package is great for visualising where missing data is and where imputations are made.</p>
+<p>The package enables the generation of imputed values by several different methods. The way to choose your method is essentially <code>na.'algorithm name'</code></p>
+<p>Some advice from the audience was never use <code>na.mean</code> and generally do not use <code>na.mean</code>, <code>na.random</code> or <code>na.replace</code>.</p>
+<p>Another package which works very similarly and is probably worth a look is <code>forecast</code>. The syntax is very similar.</p>
+<p>We will also want to look into the best package/method for imputation in panel data. Because we have such rich information about previous observations of the same individual, this should enable high-quality methods for imputation.</p>
+<p>Links:</p>
+<ul>
+<li><a href="http://github.com/steffenmoritz/imputets"><code>imputeTS</code></a></li>
+<li><a href="http://GitHub.com/rianneschouten/amputation_with_ampute"><code>ampute</code></a></li>
+</ul>
+</div>
