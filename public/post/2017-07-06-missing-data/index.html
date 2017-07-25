@@ -72,7 +72,7 @@ First of all, we were introduced to an R package for analysing Aussie weather da
 
 
 <meta itemprop="dateModified" content="2017-07-06T00:00:00&#43;00:00" />
-<meta itemprop="wordCount" content="1059">
+<meta itemprop="wordCount" content="1119">
 
 
 
@@ -308,7 +308,7 @@ First of all, we were introduced to an R package for analysing Aussie weather da
             July 6, 2017</time>
         <span class="author">Nathan</span>
         
-            <p>5 minute read</p>
+            <p>6 minute read</p>
         
         
     </div>
@@ -472,7 +472,11 @@ vignette(&quot;intro&quot;, package = &quot;lumberjack&quot;)</code></pre>
 <h2>How to deal with missing data in time series: the <code>imputeTS</code> package</h2>
 <p>As you may have guessed from the snazzy title, this package is for imputing missing data in time series datasets!</p>
 <p><code>imputeTS</code> is for dealing with univariate data. However, it’s important to note that time itself is not the variable in question, but rather an extra variable that must be considered part of the data when analysing it. As Steffen said in the talk, “For MCAR/MNAR/MAR to be determined, time has to be considered as a variable”.</p>
-<p>To impute data, simply run the command <code>na.interpolation(x)</code> where <code>x</code> is your time series. The output will be a time series where NAs are replaced with reasonable values. There are other methods of much more complexity than my burned-out brain could even begin to comprehend, so maybe go exploring yourselves!</p>
+<p>The <code>imputeTS</code> package is great for visualising where missing data is and where imputations are made.</p>
+<p>The package enables the generation of imputed values by several different methods. The way to choose your method is essentially <code>na.'algorithm name'</code></p>
+<p>Some advice from the audience was never use <code>na.mean</code> and generally do not use <code>na.mean</code>, <code>na.random</code> or <code>na.replace</code>.</p>
+<p>Another package which works very similarly and is probably worth a look is <code>forecast</code>. The syntax is very similar.</p>
+<p>We will also want to look into the best package/method for imputation in panel data. Because we have such rich information about previous observations of the same individual, this should enable high-quality methods for imputation.</p>
 <p>Links:</p>
 <ul>
 <li><a href="http://github.com/steffenmoritz/imputets"><code>imputeTS</code></a></li>
