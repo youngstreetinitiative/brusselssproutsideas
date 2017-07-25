@@ -82,6 +82,19 @@ R is now integrated into many aspects of Microsoft for “intelligence” which 
     </item>
     
     <item>
+      <title>Missing Data</title>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-06-missing-data/</link>
+      <pubDate>Thu, 06 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-06-missing-data/</guid>
+      <description>There are a number of different options available for dealing with missing data. Here are four we encountered on Thursday at the conference:
+narnia: Dealing with missing dataThe talk can be found in xaringan form here
+Nicholas Tierney, Monash University
+Nick’s a brilliant individual whom several of us have encountered at different conferences now, and he was here to show us two of his packages: visdat and narnia
+First of all, we were introduced to an R package for analysing Aussie weather data - BOMRang - which sounded kind of brilliant.</description>
+    </item>
+    
+    <item>
       <title>Labour Mobility Second Test. Bigger and bigglier. NO SHAME!</title>
       <link>http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility-2/</link>
       <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
