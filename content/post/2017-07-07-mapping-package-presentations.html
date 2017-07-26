@@ -1,0 +1,281 @@
+---
+title: "Mapping Package Presentations"
+author: "Nathan"
+date: "2017-07-07"
+output: 
+  html_document:
+    toc: true
+    number_sections: false
+    toc_depth: 2
+    highlight: tango
+    css: custom.css
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<div id="scalable-spatiotemporal-tidy-arrays-for-r---stars" class="section level2">
+<h2>Scalable, Spatiotemporal Tidy Arrays for R - <code>stars</code></h2>
+<p><a href="http://github.com/edzer"><em>Edzer Pebesma</em></a></p>
+<p>stars</p>
+<ul>
+<li>Follow-up to sf</li>
+<li>Supported by R Consortium</li>
+<li>Anticipating the question”When will raster support sf?”</li>
+<li>Here because setdiff(sf, sp) = raster</li>
+<li>Will not easily replace raster (45,000 lines of code)</li>
+<li>Has time frame - Sept 17-Sept 18</li>
+<li>Consists of just design ideas right now</li>
+</ul>
+<p>What is an array?</p>
+<ul>
+<li>Mapping from dimensions to values</li>
+<li>For example:
+<ul>
+<li>climate (lat, long, elevation, time) -&gt; (temp, humidity)</li>
+<li>Sound (time, freq) -&gt; (level)</li>
+</ul></li>
+<li>Space and time often among the dimensions</li>
+<li>Space can be 2D - raster - or 1D - points, roads, states</li>
+<li>Time can be 2D - time of forecast + time to forecast; week + weekday; etc</li>
+<li>Tables (data.frame, etc) can hold 1D arrays</li>
+</ul>
+<p>Why is there a need?</p>
+<ul>
+<li>base::array can only hold single value type arrays, sits in-memory</li>
+<li>dplyr::tbl_cube isn’t used much and still experimental, sits in-memory</li>
+<li>raster::raster scales to disk-size datasets, but only single types, and is limited to 3D. Largely in C++, but I/O through other packages</li>
+<li>spacetime::STFDF - in-memory, see JStatSoft paper</li>
+</ul>
+<p>Basic ideas:</p>
+<ul>
+<li>stars objects extend data.frame, or are a lit of base::arrays</li>
+<li>Only values are retained, dimensions are implicit</li>
+<li>Dimensions info is kept in an attribute, the Dimensions list</li>
+<li>Each dimensions has methods ones to convert from index (1,2,…,n) to dimensions value and back</li>
+<li>Examples:
+<ul>
+<li>type, start, end, n</li>
+<li>list with (ordered) values, or simple features</li>
+<li>(For sets of dimensions): parameters of transformations</li>
+</ul></li>
+</ul>
+<p>Spatiotemporal</p>
+<ul>
+<li>Use the notion of cell size and time intervals (spatial support)</li>
+<li>String support for spatial reference systems</li>
+<li>Regridding, warping, etc</li>
+<li>Support for measurement units</li>
+</ul>
+<p>Tidy</p>
+<ul>
+<li>Provide tidy verbs (methods)</li>
+<li>Extend with array things:
+<ul>
+<li>Slice/dice: filter based on values</li>
+<li>Apply functions over dimensions</li>
+<li>More stuff</li>
+</ul></li>
+</ul>
+<p>Scalable</p>
+<ul>
+<li>Besides having complete arrays in-memory, stars will also accommodate for proxy objects, having part of the complete array in memory, other parts on local disk, or on remote servers</li>
+<li>The proxy will have a reduced array, using strides(e.g. Reading every tenth row and tenth column) so that visualisation is responsive</li>
+</ul>
+</div>
+<div id="exploring-and-presenting-maps-with-tmap" class="section level2">
+<h2>Exploring and presenting maps with <code>tmap</code></h2>
+<p><a href="http://www.GitHub.com/mtennekes/tmap"><em>Martijn Tennekes</em></a></p>
+<p>Alternative to ggplot2</p>
+<ul>
+<li>Spatial objects can be used directly</li>
+<li>Layout optimised for maps (legend, attributes, etc)</li>
+<li>However, it is another package to learn
+<ul>
+<li>Basically every command is <code>tm_</code> instead of <code>geom_</code>, except for <code>tm_layout</code> instead of <code>theme</code> and <code>qtm</code> instead of <code>qplot</code></li>
+</ul></li>
+</ul>
+<p>Switch between static plot and interactive view</p>
+<ul>
+<li><code>tmap_mode(“plot”/“view”)</code></li>
+<li>switch between with <code>ttm()</code></li>
+</ul>
+<p>Map layout</p>
+<ul>
+<li>Attributes, compass, contribution text, grid lines, scale bar</li>
+<li>Styles, e.g. <code>tm_style_grey</code>, <code>tm_style_classic</code></li>
+<li>Map insets</li>
+</ul>
+<p>Small multiples</p>
+<ul>
+<li>multiple variables on one aesthetic can create multiple maps like <code>facet_wrap</code>, but <code>tm_facets</code> or <code>tm_arrange</code> can also do it)</li>
+</ul>
+<p>Cartograms</p>
+<ul>
+<li>Uses <code>cartogram</code> package</li>
+</ul>
+<p>Helpful commands:</p>
+<ul>
+<li><code>save_tmap</code> - saves to HTML for interactive, or png for static image</li>
+<li><code>tmaptools</code> - package with helper functions</li>
+<li><code>bb</code> creates or modifies a bounding box</li>
+<li><code>append_data</code></li>
+<li><code>geocode_osm</code></li>
+</ul>
+<p>Related packages:</p>
+<ul>
+<li><code>sp</code>, <code>raster</code>, <code>rgdal</code>, <code>rgeos</code>, <code>classInt</code>, <code>RColorBrewer</code></li>
+</ul>
+</div>
+<div id="mapedit-interactive-manipulation-of-spatial-objects" class="section level2">
+<h2><code>mapedit</code>: interactive manipulation of spatial objects</h2>
+<p><a href="https://github.com/tim-salabim"><em>Tim Appelhans</em></a></p>
+<p><a href="https://github.com/tim-salabim/user2017-mapedit-talk/raw/master/presentation/mapedit.pdf">Talk can be found here as a downloadable PDF</a></p>
+<p>Aims:</p>
+<ul>
+<li>Drawing new features</li>
+<li>Editing (update and delete) existing features</li>
+<li>Selecting and querying features and map regions</li>
+<li>Editing attributes (not yet implemented)</li>
+</ul>
+<p>Idea behind the package - if you want to get some eggs from the shops, why take a truck when you can take a bike? So it is with mapedit and GIS tools.</p>
+<p>Links:</p>
+<ul>
+<li><a href="http://www.GitHub.com/r-spatial/mapedit">GitHub.com/r-spatial/mapedit</a></li>
+<li><a href="http://www.r-spatial.org">r-spatial.org</a> - mapedit 0.2.0 post with Shiny examples</li>
+</ul>
+</div>
+<div id="maps-are-data-so-why-plot-data-on-a-map" class="section level2">
+<h2>Maps are data, so why plot data on a map?</h2>
+<p><a href="http://www.github.com/mpadge"><em>Mark Padgham</em></a></p>
+<p><a href="https://schd.ws/hosted_files/user2017/88/padgham.pdf">Talk can be found here as a downloadable PDF</a></p>
+<p><code>osmdata</code> + <code>osmplotr</code></p>
+<p>In 2016, ESRI held a competition for ArcGIS users to submit their best maps. They are not good maps.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%201st%20place.JPG?token=AWP0sHJYX120U0Kms7R97UdabonU-eu2ks5ZgR1swA%3D%3D" alt="First place winner in 2016 was a terrible representation of population hotspots" />
+<p class="caption"><strong>First place winner in 2016 was a terrible representation of population hotspots</strong></p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%202nd%20place.jpg?token=AWP0sHXISq7b9yyJzXKLJ3Y5Sgqtazuqks5ZgR1OwA%3D%3D" alt="Second place represented walkability of streets by displaying data in areas that aren’t walkable" />
+<p class="caption"><strong>Second place represented walkability of streets by displaying data in areas that aren’t walkable</strong></p>
+</div>
+<p><code>osmdata</code> in combination with <code>osmplotr</code> enables you to plot the exact same data in just a few lines of code!</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/walkable%20areas%20with%20osmdata.jpg?token=AWP0sK2ig712E_vZMw06CuvUKcEAMZ4Iks5ZgSDiwA%3D%3D" alt="The osmdata + osmplotr version" />
+<p class="caption"><strong>The <code>osmdata</code> + <code>osmplotr</code> version</strong></p>
+</div>
+<ol style="list-style-type: decimal">
+<li>osmdata</li>
+</ol>
+<ul>
+<li>osmdata gives you infinitely more mapping data for, say, North Korea that Google Maps and Bing Maps can’t give you</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/bing%20anju.JPG?token=AWP0sLG3Rn_9WVNQi8S_GHe_2xvPIVeGks5ZgSQPwA%3D%3D" alt="Bing Maps representation of Anju, North Korea" />
+<p class="caption">Bing Maps representation of Anju, North Korea</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20anju.JPG?token=AWP0sE4skhwS0iznRbraUHZLHFldB7Udks5ZgSQbwA%3D%3D" alt="Google Maps representation of Anju, North Korea" />
+<p class="caption">Google Maps representation of Anju, North Korea</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20satview%20anju.JPG?token=AWP0sFDEzSv7cVQCQakUvqR_nV0dYDAeks5ZgSQkwA%3D%3D" alt="Obviously, the satellite view of Anju demonstrates that it’s more than just a crossroads" />
+<p class="caption">Obviously, the satellite view of Anju demonstrates that it’s more than just a crossroads</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/osm%20anju.JPG?token=AWP0sCUOvhPKpbjLlJjcuQHAMbUT6XqCks5ZgSdRwA%3D%3D" alt="OSM shows the full extent of the town most accurately" />
+<p class="caption">OSM shows the full extent of the town most accurately</p>
+</div>
+<ul>
+<li><code>opq</code> = open pass query</li>
+</ul>
+<pre class="r"><code>dat_B &lt;- opq(&quot;anju north korea&quot;) %&gt;%
+add_feature(key = &quot;building&quot;) %&gt;%
+osmdata_sf()
+
+dat_H &lt;- opq(&quot;anju north korea&quot;) %&gt;%
+add_feature(key = &quot;highway&quot;) %&gt;%
+osmdata_sf()
+dat_B &lt;- dat_B$osm_polygons
+dat_H &lt;- dat_H$osm_lines
+
+dat_B &lt;- osmdata::getbb(&quot;anju north korea&quot;) %&gt;%
+osmplotr::extract_osm_objects(key = &quot;building&quot;)
+dat_H &lt;- osmdata::getbb(&quot;anju north korea&quot;) %&gt;%
+osmplotr::extract_osm_objects(key = &quot;highway&quot;)
+
+bb &lt;- osmplotr::get_bbox (c(125.64, 39.60, 125.69, 39.63))
+map &lt;- osmplotr::osm_basemap(bbox = bb, bg = &quot;gray20&quot;) %&gt;%
+osmplotr::add_osm_objects(dat_H, col = &quot;gray40&quot;) %&gt;%
+osmplotr::add_osm_objects(dat_B, col = &quot;yellow&quot;)
+
+osmplotr::print_osm_map(map)</code></pre>
+<pre><code>- `nrow(dat$osm_polygons)`
+
+- `names(dat$osm_lines)`
+
+- `names(dat$osm_polygons)`</code></pre>
+<ul>
+<li><p><code>osmplotr</code> package can do things in one line, e.g.</p>
+<ul>
+<li><code>osmplotr::osm_basemap(bbox = bb, bg = 'gray20') %&gt;% osmplotr::add_osm_objects(dat, col = “grays”)</code></li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Basic maps</li>
+</ol>
+<pre class="r"><code>library(osmdata)
+library(osmplotr)
+
+bb &lt;- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+dat_B &lt;- extract_osm_objects(bbox = bb, key =&quot;building&quot;)
+dat_H &lt;- extract_osm_objects(bbox = bb, key =&quot;highway&quot;)
+dat_R &lt;- extract_osm_objects(bbox = bb, key =&quot;railway&quot;)</code></pre>
+<pre><code>## Cannot determine return_type; maybe specify explicitly?</code></pre>
+<pre class="r"><code>dat_P &lt;- extract_osm_objects(bbox = bb, key =&quot;park&quot;)
+dat_W &lt;- extract_osm_objects(bbox = bb, key =&quot;natural&quot;, value =&quot;water&quot;)
+
+col_p &lt;- &quot;#C8FFC8FF&quot;
+col_w &lt;-&quot;#C8C8DCFF&quot;
+col_wb &lt;- adjust_colours(col_w, -0.2)
+col_r &lt;- &quot;gray60&quot;
+col_b &lt;- &quot;#C8C8C8FF&quot;
+col_bb &lt;- adjust_colours(col_b, -0.2)
+col_h &lt;- &quot;#969696FF&quot;
+
+wg &lt;- opq(bbox = bb) %&gt;%
+  add_feature(key = &quot;building&quot;, value = &quot;commercial&quot;) %&gt;%
+  add_feature(key = &quot;addr:street&quot;,
+              value = &quot;Avenue du Pont de Luttre&quot;,
+              value_exact = FALSE) %&gt;%
+  add_feature(key = &quot;addr:housenumber&quot;, value = 74)
+
+map &lt;- osm_basemap(bbox = bb) %&gt;%
+add_osm_objects(dat_P, col = col_p) %&gt;%
+add_osm_objects(dat_W, col = col_w, border = col_wb , size = 1) %&gt;%
+add_osm_objects(dat_R, col = col_r) %&gt;%
+add_osm_objects(dat_B, col = col_b, border = col_bb, size = 0.1) %&gt;%
+add_osm_objects(dat_H, col = col_h) %&gt;%
+#add_osm_objects(wg, col = &quot;orange&quot;, border = &quot;red&quot;, size = 1) %&gt;%
+add_axes()
+
+print_osm_map(map)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Data maps</li>
+</ol>
+<pre class="r"><code>#bbox &lt;- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+#map &lt;- osm_basemap(bbox = bbox, bg = &quot;gray95&quot;) %&gt;%
+#add_osm_objects(map, dat_W, col = col_w, border = col_wb, size = 1) %&gt;%
+#add_osm_objects(map, dat_P, col = col_p) %&gt;%
+#add_osm_objects(map, dat_R, col = &quot;gray30&quot;) %&gt;%
+#add_osm_surface(map, dat_B, dat = surf, cols=cols) %&gt;%
+#add_osm_surface(map, dat_H, dat = surf, cols = cols_h) %&gt;%
+#add_axes(map) %&gt;%
+#add_colourbar(map,cols=cols,zlims=range(surf$z))
+
+#print_osm_map(map)</code></pre>
+<ul>
+<li>You can do categorical data - clusters defined by different variables - <code>add_osm_groups</code></li>
+</ul>
+</div>
