@@ -1,0 +1,275 @@
+---
+title: "Mapping Package Presentations"
+author: "Nathan"
+date: "2017-07-07"
+output: 
+  html_document:
+    toc: true
+    number_sections: false
+    toc_depth: 2
+    highlight: tango
+    css: custom.css
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, cache = TRUE)
+library(tidyverse)
+library(osmdata)
+library(osmplotr)
+```
+
+## Scalable, Spatiotemporal Tidy Arrays for R - `stars`
+
+[_Edzer Pebesma_](http://github.com/edzer)
+
+stars
+
+- Follow-up to sf
+- Supported by R Consortium
+- Anticipating the question”When will raster support sf?”
+- Here because setdiff(sf, sp) = raster
+- Will not easily replace raster (45,000 lines of code)
+- Has time frame - Sept 17-Sept 18
+- Consists of just design ideas right now
+
+What is an array?
+
+- Mapping from dimensions to values
+- For example:
+    - climate (lat, long, elevation, time) -> (temp, humidity)
+    - Sound (time, freq) -> (level)
+- Space and time often among the dimensions
+- Space can be 2D - raster - or 1D - points, roads, states
+- Time can be 2D - time of forecast + time to forecast; week + weekday; etc
+- Tables (data.frame, etc) can hold 1D arrays
+
+Why is there a need?
+
+- base::array can only hold single value type arrays, sits in-memory
+- dplyr::tbl_cube isn't used much and still experimental, sits in-memory
+- raster::raster scales to disk-size datasets, but only single types, and is limited to 3D. Largely in C++, but I/O through other packages
+- spacetime::STFDF - in-memory, see JStatSoft paper
+
+Basic ideas:
+
+- stars objects extend data.frame, or are a lit of base::arrays
+- Only values are retained, dimensions are implicit
+- Dimensions info is kept in an attribute, the Dimensions list
+- Each dimensions has methods ones to convert from index (1,2,…,n) to dimensions value and back
+- Examples:
+    - type, start, end, n
+    - list with (ordered) values, or simple features
+    - (For sets of dimensions): parameters of transformations
+
+Spatiotemporal
+
+- Use the notion of cell size and time intervals (spatial support)
+- String support for spatial reference systems
+- Regridding, warping, etc
+- Support for measurement units
+ 
+Tidy
+
+- Provide tidy verbs (methods)
+- Extend with array things:
+    - Slice/dice: filter based on values
+    - Apply functions over dimensions
+    - More stuff
+
+Scalable
+
+- Besides having complete arrays in-memory, stars will also accommodate for proxy objects, having part of the complete array in memory, other parts on local disk, or on remote servers
+- The proxy will have a reduced array, using strides(e.g. Reading every tenth row and tenth column) so that visualisation is responsive
+
+## Exploring and presenting maps with `tmap`
+
+[_Martijn Tennekes_](http://www.GitHub.com/mtennekes/tmap)
+
+Alternative to ggplot2
+
+- Spatial objects can be used directly
+- Layout optimised for maps (legend, attributes, etc)
+- However, it is another package to learn
+    - Basically every command is `tm_` instead of `geom_`, except for `tm_layout` instead of `theme` and `qtm` instead of `qplot`
+
+Switch between static plot and interactive view
+
+- `tmap_mode(“plot”/“view”)`
+- switch between with `ttm()`
+    
+
+Map layout
+
+- Attributes, compass, contribution text, grid lines, scale bar
+- Styles, e.g. `tm_style_grey`, `tm_style_classic`
+- Map insets
+
+Small multiples
+
+- multiple variables on one aesthetic can create multiple maps like `facet_wrap`, but `tm_facets` or `tm_arrange` can also do it)
+
+Cartograms
+
+- Uses `cartogram` package
+
+Helpful commands:
+
+- `save_tmap` - saves to HTML for interactive, or png for static image
+- `tmaptools` - package with helper functions
+- `bb` creates or modifies a bounding box
+- `append_data`
+- `geocode_osm`
+    
+
+Related packages:
+
+- `sp`, `raster`, `rgdal`, `rgeos`, `classInt`, `RColorBrewer`
+
+## `mapedit`: interactive manipulation of spatial objects
+
+[_Tim Appelhans_](https://github.com/tim-salabim)
+
+[Talk can be found here as a downloadable PDF](https://github.com/tim-salabim/user2017-mapedit-talk/raw/master/presentation/mapedit.pdf)
+
+Aims:
+
+- Drawing new features
+- Editing (update and delete) existing features
+- Selecting and querying features and map regions
+- Editing attributes (not yet implemented)
+
+Idea behind the package - if you want to get some eggs from the shops, why take a truck when you can take a bike? So it is with mapedit and GIS tools.
+
+Links:
+
+- [GitHub.com/r-spatial/mapedit](http://www.GitHub.com/r-spatial/mapedit)
+- [r-spatial.org](http://www.r-spatial.org) - mapedit 0.2.0 post with Shiny examples
+
+## Maps are data, so why plot data on a map?
+
+[_Mark Padgham_](http://www.github.com/mpadge)
+
+[Talk can be found here as a downloadable PDF](https://schd.ws/hosted_files/user2017/88/padgham.pdf)
+
+`osmdata` + `osmplotr`
+
+In 2016, ESRI held a competition for ArcGIS users to submit their best maps. They are not good maps.
+
+![**First place winner in 2016 was a terrible representation of population hotspots**](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%201st%20place.JPG?token=AWP0sHJYX120U0Kms7R97UdabonU-eu2ks5ZgR1swA%3D%3D)
+
+![**Second place represented walkability of streets by displaying data in areas that aren't walkable**](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%202nd%20place.jpg?token=AWP0sHXISq7b9yyJzXKLJ3Y5Sgqtazuqks5ZgR1OwA%3D%3D)
+
+
+`osmdata` in combination with `osmplotr` enables you to plot the exact same data in just a few lines of code!
+
+![**The `osmdata` + `osmplotr` version**](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/walkable%20areas%20with%20osmdata.jpg?token=AWP0sK2ig712E_vZMw06CuvUKcEAMZ4Iks5ZgSDiwA%3D%3D)
+
+1. osmdata
+
+- osmdata gives you infinitely more mapping data for, say, North Korea that Google Maps and Bing Maps can't give you
+
+![Bing Maps representation of Anju, North Korea](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/bing%20anju.JPG?token=AWP0sLG3Rn_9WVNQi8S_GHe_2xvPIVeGks5ZgSQPwA%3D%3D)
+
+![Google Maps representation of Anju, North Korea](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20anju.JPG?token=AWP0sE4skhwS0iznRbraUHZLHFldB7Udks5ZgSQbwA%3D%3D)
+
+![Obviously, the satellite view of Anju demonstrates that it's more than just a crossroads](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20satview%20anju.JPG?token=AWP0sFDEzSv7cVQCQakUvqR_nV0dYDAeks5ZgSQkwA%3D%3D)
+
+![OSM shows the full extent of the town most accurately](https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/osm%20anju.JPG?token=AWP0sCUOvhPKpbjLlJjcuQHAMbUT6XqCks5ZgSdRwA%3D%3D)
+
+- `opq` = open pass query
+    
+```{r echo = T, eval = T}
+dat_B <- opq("anju north korea") %>%
+add_feature(key = "building") %>%
+osmdata_sf()
+
+dat_H <- opq("anju north korea") %>%
+add_feature(key = "highway") %>%
+osmdata_sf()
+dat_B <- dat_B$osm_polygons
+dat_H <- dat_H$osm_lines
+
+dat_B <- osmdata::getbb("anju north korea") %>%
+osmplotr::extract_osm_objects(key = "building")
+dat_H <- osmdata::getbb("anju north korea") %>%
+osmplotr::extract_osm_objects(key = "highway")
+
+bb <- osmplotr::get_bbox (c(125.64, 39.60, 125.69, 39.63))
+map <- osmplotr::osm_basemap(bbox = bb, bg = "gray20") %>%
+osmplotr::add_osm_objects(dat_H, col = "gray40") %>%
+osmplotr::add_osm_objects(dat_B, col = "yellow")
+
+osmplotr::print_osm_map(map)
+```
+    
+    - `nrow(dat$osm_polygons)`
+    
+    - `names(dat$osm_lines)`
+    
+    - `names(dat$osm_polygons)`
+    
+- `osmplotr` package can do things in one line, e.g.
+    
+    - `osmplotr::osm_basemap(bbox = bb, bg = 'gray20') %>% osmplotr::add_osm_objects(dat, col = “grays”)`
+
+2. Basic maps
+
+
+```{r eval = T, echo = T}
+
+library(osmdata)
+library(osmplotr)
+
+bb <- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+dat_B <- extract_osm_objects(bbox = bb, key ="building")
+dat_H <- extract_osm_objects(bbox = bb, key ="highway")
+dat_R <- extract_osm_objects(bbox = bb, key ="railway")
+dat_P <- extract_osm_objects(bbox = bb, key ="park")
+dat_W <- extract_osm_objects(bbox = bb, key ="natural", value ="water")
+
+col_p <- "#C8FFC8FF"
+col_w <-"#C8C8DCFF"
+col_wb <- adjust_colours(col_w, -0.2)
+col_r <- "gray60"
+col_b <- "#C8C8C8FF"
+col_bb <- adjust_colours(col_b, -0.2)
+col_h <- "#969696FF"
+
+wg <- opq(bbox = bb) %>%
+  add_feature(key = "building", value = "commercial") %>%
+  add_feature(key = "addr:street",
+              value = "Avenue du Pont de Luttre",
+              value_exact = FALSE) %>%
+  add_feature(key = "addr:housenumber", value = 74)
+
+map <- osm_basemap(bbox = bb) %>%
+add_osm_objects(dat_P, col = col_p) %>%
+add_osm_objects(dat_W, col = col_w, border = col_wb , size = 1) %>%
+add_osm_objects(dat_R, col = col_r) %>%
+add_osm_objects(dat_B, col = col_b, border = col_bb, size = 0.1) %>%
+add_osm_objects(dat_H, col = col_h) %>%
+#add_osm_objects(wg, col = "orange", border = "red", size = 1) %>%
+add_axes()
+
+print_osm_map(map)
+```
+
+3. Data maps
+
+```{r eval = T, echo = T}
+#bbox <- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+#map <- osm_basemap(bbox = bbox, bg = "gray95") %>%
+#add_osm_objects(map, dat_W, col = col_w, border = col_wb, size = 1) %>%
+#add_osm_objects(map, dat_P, col = col_p) %>%
+#add_osm_objects(map, dat_R, col = "gray30") %>%
+#add_osm_surface(map, dat_B, dat = surf, cols=cols) %>%
+#add_osm_surface(map, dat_H, dat = surf, cols = cols_h) %>%
+#add_axes(map) %>%
+#add_colourbar(map,cols=cols,zlims=range(surf$z))
+
+#print_osm_map(map)
+```
+
+- You can do categorical data - clusters defined by different variables - `add_osm_groups`

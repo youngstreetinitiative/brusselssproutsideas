@@ -1,0 +1,1007 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        
+            
+                <title>Mapping Package Presentations</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.24" />
+        
+
+
+        
+            <meta name="author" content="Nathan">
+        
+        
+            
+                <meta name="description" content="Nathan and Jackson&#39;s Brussels Blog, for the sharing of knowledge. Powered by Hugo">
+            
+        
+
+        
+
+  <meta name="twitter:card" content="summary"/>
+
+
+
+<meta name="twitter:text:title" content="Mapping Package Presentations"/>
+<meta name="twitter:title" content="Mapping Package Presentations"/>
+<meta name="twitter:description" content="Scalable, Spatiotemporal Tidy Arrays for R - starsEdzer Pebesma
+stars
+Follow-up to sfSupported by R ConsortiumAnticipating the question”When will raster support sf?”Here because setdiff(sf, sp) = rasterWill not easily replace raster (45,000 lines of code)Has time frame - Sept 17-Sept 18Consists of just design ideas right nowWhat is an array?
+Mapping from dimensions to valuesFor example:climate (lat, long, elevation, time) -&gt; (temp, humidity)Sound (time, freq) -&gt; (level)Space and time often among the dimensionsSpace can be 2D - raster - or 1D - points, roads, statesTime can be 2D - time of forecast &#43; time to forecast; week &#43; weekday; etcTables (data."/>
+<meta name="twitter:site" content="@things_tomsays"/>
+
+        <meta property="og:title" content="Mapping Package Presentations" />
+<meta property="og:description" content="Scalable, Spatiotemporal Tidy Arrays for R - starsEdzer Pebesma
+stars
+Follow-up to sfSupported by R ConsortiumAnticipating the question”When will raster support sf?”Here because setdiff(sf, sp) = rasterWill not easily replace raster (45,000 lines of code)Has time frame - Sept 17-Sept 18Consists of just design ideas right nowWhat is an array?
+Mapping from dimensions to valuesFor example:climate (lat, long, elevation, time) -&gt; (temp, humidity)Sound (time, freq) -&gt; (level)Space and time often among the dimensionsSpace can be 2D - raster - or 1D - points, roads, statesTime can be 2D - time of forecast &#43; time to forecast; week &#43; weekday; etcTables (data." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/" />
+
+
+
+<meta property="article:published_time" content="2017-07-07T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2017-07-07T00:00:00&#43;00:00"/>
+
+
+
+
+
+
+
+
+
+
+
+        
+<meta itemprop="name" content="Mapping Package Presentations">
+<meta itemprop="description" content="Scalable, Spatiotemporal Tidy Arrays for R - starsEdzer Pebesma
+stars
+Follow-up to sfSupported by R ConsortiumAnticipating the question”When will raster support sf?”Here because setdiff(sf, sp) = rasterWill not easily replace raster (45,000 lines of code)Has time frame - Sept 17-Sept 18Consists of just design ideas right nowWhat is an array?
+Mapping from dimensions to valuesFor example:climate (lat, long, elevation, time) -&gt; (temp, humidity)Sound (time, freq) -&gt; (level)Space and time often among the dimensionsSpace can be 2D - raster - or 1D - points, roads, statesTime can be 2D - time of forecast &#43; time to forecast; week &#43; weekday; etcTables (data.">
+
+
+<meta itemprop="dateModified" content="2017-07-07T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="1058">
+
+
+
+<meta itemprop="keywords" content="R,R Markdown,plot,regression," />
+
+        
+
+        
+
+        
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="/css/google-font.css" />
+            <link rel="stylesheet" href="/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="/css/main.css" />
+            <link rel="stylesheet" href="/css/add-on.css" />
+            <link rel="stylesheet" href="/css/monokai-sublime.css">
+        
+
+        
+
+        
+        
+        
+            
+        
+    </head>
+    <body>
+
+        
+        <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+        <h2><a href="/">Brussels Sprouts Ideas</i></a></h2>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                        
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories">
+                        Categories
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="q" value="site:http://brussels-sprouts-ideas.netlify.com/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="q" value="site:http://brussels-sprouts-ideas.netlify.com/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                
+                                    <i class="fa fa-newspaper-o">&nbsp;</i>
+                                
+                                Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            <h3>
+                                
+                                Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-data-wrangling-2-data-frame-management/"><p>Data Wrangling 2: Data frame management</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-government-data/"><p>Government Data</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-data-carpentary-workshop/"><p>Data Carpentary tutorial</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-friday-in-the-plenary/"><p>Friday in the Plenary</p></a>
+                    </li>
+                
+                    <li>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/"><p>Mapping Package Presentations</p></a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&text=Mapping%20Package%20Presentations&via=things_tomsays" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Nathan&body=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+    <header>
+    <div class="title">
+        
+            <h1><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/">Mapping Package Presentations</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-07'>
+            July 7, 2017</time>
+        <span class="author">Nathan</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+    <section id="social-share">
+        <ul class="icons">
+            
+
+
+<li><a href="//twitter.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&text=Mapping%20Package%20Presentations&via=things_tomsays" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+</a></li>
+
+
+<li><a href="//plus.google.com/share?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+</a></li>
+
+
+<li><a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+</a></li>
+
+
+<li><a href="//reddit.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+</a></li>
+
+
+<li><a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn linkedin">
+    <i class="fa fa-linkedin"></i>
+    <p>LinkedIn</p>
+</a></li>
+
+
+<li><a href="//www.stumbleupon.com/submit?url=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f&title=Mapping%20Package%20Presentations" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+</a></li>
+
+
+<li><a href="mailto:?subject=Check out this post by Nathan&body=http%3a%2f%2fbrussels-sprouts-ideas.netlify.com%2fpost%2f2017-07-07-mapping-package-presentations%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+</a></li>
+
+        </ul>
+    </section>
+    
+
+    <div id="content">
+        <div id="scalable-spatiotemporal-tidy-arrays-for-r---stars" class="section level2">
+<h2>Scalable, Spatiotemporal Tidy Arrays for R - <code>stars</code></h2>
+<p><a href="http://github.com/edzer"><em>Edzer Pebesma</em></a></p>
+<p>stars</p>
+<ul>
+<li>Follow-up to sf</li>
+<li>Supported by R Consortium</li>
+<li>Anticipating the question”When will raster support sf?”</li>
+<li>Here because setdiff(sf, sp) = raster</li>
+<li>Will not easily replace raster (45,000 lines of code)</li>
+<li>Has time frame - Sept 17-Sept 18</li>
+<li>Consists of just design ideas right now</li>
+</ul>
+<p>What is an array?</p>
+<ul>
+<li>Mapping from dimensions to values</li>
+<li>For example:
+<ul>
+<li>climate (lat, long, elevation, time) -&gt; (temp, humidity)</li>
+<li>Sound (time, freq) -&gt; (level)</li>
+</ul></li>
+<li>Space and time often among the dimensions</li>
+<li>Space can be 2D - raster - or 1D - points, roads, states</li>
+<li>Time can be 2D - time of forecast + time to forecast; week + weekday; etc</li>
+<li>Tables (data.frame, etc) can hold 1D arrays</li>
+</ul>
+<p>Why is there a need?</p>
+<ul>
+<li>base::array can only hold single value type arrays, sits in-memory</li>
+<li>dplyr::tbl_cube isn’t used much and still experimental, sits in-memory</li>
+<li>raster::raster scales to disk-size datasets, but only single types, and is limited to 3D. Largely in C++, but I/O through other packages</li>
+<li>spacetime::STFDF - in-memory, see JStatSoft paper</li>
+</ul>
+<p>Basic ideas:</p>
+<ul>
+<li>stars objects extend data.frame, or are a lit of base::arrays</li>
+<li>Only values are retained, dimensions are implicit</li>
+<li>Dimensions info is kept in an attribute, the Dimensions list</li>
+<li>Each dimensions has methods ones to convert from index (1,2,…,n) to dimensions value and back</li>
+<li>Examples:
+<ul>
+<li>type, start, end, n</li>
+<li>list with (ordered) values, or simple features</li>
+<li>(For sets of dimensions): parameters of transformations</li>
+</ul></li>
+</ul>
+<p>Spatiotemporal</p>
+<ul>
+<li>Use the notion of cell size and time intervals (spatial support)</li>
+<li>String support for spatial reference systems</li>
+<li>Regridding, warping, etc</li>
+<li>Support for measurement units</li>
+</ul>
+<p>Tidy</p>
+<ul>
+<li>Provide tidy verbs (methods)</li>
+<li>Extend with array things:
+<ul>
+<li>Slice/dice: filter based on values</li>
+<li>Apply functions over dimensions</li>
+<li>More stuff</li>
+</ul></li>
+</ul>
+<p>Scalable</p>
+<ul>
+<li>Besides having complete arrays in-memory, stars will also accommodate for proxy objects, having part of the complete array in memory, other parts on local disk, or on remote servers</li>
+<li>The proxy will have a reduced array, using strides(e.g. Reading every tenth row and tenth column) so that visualisation is responsive</li>
+</ul>
+</div>
+<div id="exploring-and-presenting-maps-with-tmap" class="section level2">
+<h2>Exploring and presenting maps with <code>tmap</code></h2>
+<p><a href="http://www.GitHub.com/mtennekes/tmap"><em>Martijn Tennekes</em></a></p>
+<p>Alternative to ggplot2</p>
+<ul>
+<li>Spatial objects can be used directly</li>
+<li>Layout optimised for maps (legend, attributes, etc)</li>
+<li>However, it is another package to learn
+<ul>
+<li>Basically every command is <code>tm_</code> instead of <code>geom_</code>, except for <code>tm_layout</code> instead of <code>theme</code> and <code>qtm</code> instead of <code>qplot</code></li>
+</ul></li>
+</ul>
+<p>Switch between static plot and interactive view</p>
+<ul>
+<li><code>tmap_mode(“plot”/“view”)</code></li>
+<li>switch between with <code>ttm()</code></li>
+</ul>
+<p>Map layout</p>
+<ul>
+<li>Attributes, compass, contribution text, grid lines, scale bar</li>
+<li>Styles, e.g. <code>tm_style_grey</code>, <code>tm_style_classic</code></li>
+<li>Map insets</li>
+</ul>
+<p>Small multiples</p>
+<ul>
+<li>multiple variables on one aesthetic can create multiple maps like <code>facet_wrap</code>, but <code>tm_facets</code> or <code>tm_arrange</code> can also do it)</li>
+</ul>
+<p>Cartograms</p>
+<ul>
+<li>Uses <code>cartogram</code> package</li>
+</ul>
+<p>Helpful commands:</p>
+<ul>
+<li><code>save_tmap</code> - saves to HTML for interactive, or png for static image</li>
+<li><code>tmaptools</code> - package with helper functions</li>
+<li><code>bb</code> creates or modifies a bounding box</li>
+<li><code>append_data</code></li>
+<li><code>geocode_osm</code></li>
+</ul>
+<p>Related packages:</p>
+<ul>
+<li><code>sp</code>, <code>raster</code>, <code>rgdal</code>, <code>rgeos</code>, <code>classInt</code>, <code>RColorBrewer</code></li>
+</ul>
+</div>
+<div id="mapedit-interactive-manipulation-of-spatial-objects" class="section level2">
+<h2><code>mapedit</code>: interactive manipulation of spatial objects</h2>
+<p><a href="https://github.com/tim-salabim"><em>Tim Appelhans</em></a></p>
+<p><a href="https://github.com/tim-salabim/user2017-mapedit-talk/raw/master/presentation/mapedit.pdf">Talk can be found here as a downloadable PDF</a></p>
+<p>Aims:</p>
+<ul>
+<li>Drawing new features</li>
+<li>Editing (update and delete) existing features</li>
+<li>Selecting and querying features and map regions</li>
+<li>Editing attributes (not yet implemented)</li>
+</ul>
+<p>Idea behind the package - if you want to get some eggs from the shops, why take a truck when you can take a bike? So it is with mapedit and GIS tools.</p>
+<p>Links:</p>
+<ul>
+<li><a href="http://www.GitHub.com/r-spatial/mapedit">GitHub.com/r-spatial/mapedit</a></li>
+<li><a href="http://www.r-spatial.org">r-spatial.org</a> - mapedit 0.2.0 post with Shiny examples</li>
+</ul>
+</div>
+<div id="maps-are-data-so-why-plot-data-on-a-map" class="section level2">
+<h2>Maps are data, so why plot data on a map?</h2>
+<p><a href="http://www.github.com/mpadge"><em>Mark Padgham</em></a></p>
+<p><a href="https://schd.ws/hosted_files/user2017/88/padgham.pdf">Talk can be found here as a downloadable PDF</a></p>
+<p><code>osmdata</code> + <code>osmplotr</code></p>
+<p>In 2016, ESRI held a competition for ArcGIS users to submit their best maps. They are not good maps.</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%201st%20place.JPG?token=AWP0sHJYX120U0Kms7R97UdabonU-eu2ks5ZgR1swA%3D%3D" alt="First place winner in 2016 was a terrible representation of population hotspots" />
+<p class="caption"><strong>First place winner in 2016 was a terrible representation of population hotspots</strong></p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/arcgis%202nd%20place.jpg?token=AWP0sHXISq7b9yyJzXKLJ3Y5Sgqtazuqks5ZgR1OwA%3D%3D" alt="Second place represented walkability of streets by displaying data in areas that aren’t walkable" />
+<p class="caption"><strong>Second place represented walkability of streets by displaying data in areas that aren’t walkable</strong></p>
+</div>
+<p><code>osmdata</code> in combination with <code>osmplotr</code> enables you to plot the exact same data in just a few lines of code!</p>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/walkable%20areas%20with%20osmdata.jpg?token=AWP0sK2ig712E_vZMw06CuvUKcEAMZ4Iks5ZgSDiwA%3D%3D" alt="The osmdata + osmplotr version" />
+<p class="caption"><strong>The <code>osmdata</code> + <code>osmplotr</code> version</strong></p>
+</div>
+<ol style="list-style-type: decimal">
+<li>osmdata</li>
+</ol>
+<ul>
+<li>osmdata gives you infinitely more mapping data for, say, North Korea that Google Maps and Bing Maps can’t give you</li>
+</ul>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/bing%20anju.JPG?token=AWP0sLG3Rn_9WVNQi8S_GHe_2xvPIVeGks5ZgSQPwA%3D%3D" alt="Bing Maps representation of Anju, North Korea" />
+<p class="caption">Bing Maps representation of Anju, North Korea</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20anju.JPG?token=AWP0sE4skhwS0iznRbraUHZLHFldB7Udks5ZgSQbwA%3D%3D" alt="Google Maps representation of Anju, North Korea" />
+<p class="caption">Google Maps representation of Anju, North Korea</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/gmaps%20satview%20anju.JPG?token=AWP0sFDEzSv7cVQCQakUvqR_nV0dYDAeks5ZgSQkwA%3D%3D" alt="Obviously, the satellite view of Anju demonstrates that it’s more than just a crossroads" />
+<p class="caption">Obviously, the satellite view of Anju demonstrates that it’s more than just a crossroads</p>
+</div>
+<div class="figure">
+<img src="https://raw.githubusercontent.com/youngstreetinitiative/brusselssproutsideas/master/content/Photos/osm%20anju.JPG?token=AWP0sCUOvhPKpbjLlJjcuQHAMbUT6XqCks5ZgSdRwA%3D%3D" alt="OSM shows the full extent of the town most accurately" />
+<p class="caption">OSM shows the full extent of the town most accurately</p>
+</div>
+<ul>
+<li><code>opq</code> = open pass query</li>
+</ul>
+<pre class="r"><code>dat_B &lt;- opq(&quot;anju north korea&quot;) %&gt;%
+add_feature(key = &quot;building&quot;) %&gt;%
+osmdata_sf()
+
+dat_H &lt;- opq(&quot;anju north korea&quot;) %&gt;%
+add_feature(key = &quot;highway&quot;) %&gt;%
+osmdata_sf()
+dat_B &lt;- dat_B$osm_polygons
+dat_H &lt;- dat_H$osm_lines
+
+dat_B &lt;- osmdata::getbb(&quot;anju north korea&quot;) %&gt;%
+osmplotr::extract_osm_objects(key = &quot;building&quot;)
+dat_H &lt;- osmdata::getbb(&quot;anju north korea&quot;) %&gt;%
+osmplotr::extract_osm_objects(key = &quot;highway&quot;)
+
+bb &lt;- osmplotr::get_bbox (c(125.64, 39.60, 125.69, 39.63))
+map &lt;- osmplotr::osm_basemap(bbox = bb, bg = &quot;gray20&quot;) %&gt;%
+osmplotr::add_osm_objects(dat_H, col = &quot;gray40&quot;) %&gt;%
+osmplotr::add_osm_objects(dat_B, col = &quot;yellow&quot;)
+
+osmplotr::print_osm_map(map)</code></pre>
+<pre><code>- `nrow(dat$osm_polygons)`
+
+- `names(dat$osm_lines)`
+
+- `names(dat$osm_polygons)`</code></pre>
+<ul>
+<li><p><code>osmplotr</code> package can do things in one line, e.g.</p>
+<ul>
+<li><code>osmplotr::osm_basemap(bbox = bb, bg = 'gray20') %&gt;% osmplotr::add_osm_objects(dat, col = “grays”)</code></li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Basic maps</li>
+</ol>
+<pre class="r"><code>library(osmdata)
+library(osmplotr)
+
+bb &lt;- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+dat_B &lt;- extract_osm_objects(bbox = bb, key =&quot;building&quot;)
+dat_H &lt;- extract_osm_objects(bbox = bb, key =&quot;highway&quot;)
+dat_R &lt;- extract_osm_objects(bbox = bb, key =&quot;railway&quot;)</code></pre>
+<pre><code>## Cannot determine return_type; maybe specify explicitly?</code></pre>
+<pre class="r"><code>dat_P &lt;- extract_osm_objects(bbox = bb, key =&quot;park&quot;)
+dat_W &lt;- extract_osm_objects(bbox = bb, key =&quot;natural&quot;, value =&quot;water&quot;)
+
+col_p &lt;- &quot;#C8FFC8FF&quot;
+col_w &lt;-&quot;#C8C8DCFF&quot;
+col_wb &lt;- adjust_colours(col_w, -0.2)
+col_r &lt;- &quot;gray60&quot;
+col_b &lt;- &quot;#C8C8C8FF&quot;
+col_bb &lt;- adjust_colours(col_b, -0.2)
+col_h &lt;- &quot;#969696FF&quot;
+
+wg &lt;- opq(bbox = bb) %&gt;%
+  add_feature(key = &quot;building&quot;, value = &quot;commercial&quot;) %&gt;%
+  add_feature(key = &quot;addr:street&quot;,
+              value = &quot;Avenue du Pont de Luttre&quot;,
+              value_exact = FALSE) %&gt;%
+  add_feature(key = &quot;addr:housenumber&quot;, value = 74)
+
+map &lt;- osm_basemap(bbox = bb) %&gt;%
+add_osm_objects(dat_P, col = col_p) %&gt;%
+add_osm_objects(dat_W, col = col_w, border = col_wb , size = 1) %&gt;%
+add_osm_objects(dat_R, col = col_r) %&gt;%
+add_osm_objects(dat_B, col = col_b, border = col_bb, size = 0.1) %&gt;%
+add_osm_objects(dat_H, col = col_h) %&gt;%
+#add_osm_objects(wg, col = &quot;orange&quot;, border = &quot;red&quot;, size = 1) %&gt;%
+add_axes()
+
+print_osm_map(map)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Data maps</li>
+</ol>
+<pre class="r"><code>#bbox &lt;- get_bbox(c(4.30, 50.805, 4.34, 50.835)) # The Wild Gallery!
+#map &lt;- osm_basemap(bbox = bbox, bg = &quot;gray95&quot;) %&gt;%
+#add_osm_objects(map, dat_W, col = col_w, border = col_wb, size = 1) %&gt;%
+#add_osm_objects(map, dat_P, col = col_p) %&gt;%
+#add_osm_objects(map, dat_R, col = &quot;gray30&quot;) %&gt;%
+#add_osm_surface(map, dat_B, dat = surf, cols=cols) %&gt;%
+#add_osm_surface(map, dat_H, dat = surf, cols = cols_h) %&gt;%
+#add_axes(map) %&gt;%
+#add_colourbar(map,cols=cols,zlims=range(surf$z))
+
+#print_osm_map(map)</code></pre>
+<ul>
+<li>You can do categorical data - clusters defined by different variables - <code>add_osm_groups</code></li>
+</ul>
+</div>
+
+    </div>
+
+    <footer>
+        <ul class="stats">
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
+<ul class="actions pagination">
+    
+        <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/"
+                class="button big previous">Thursday In The Plenary</a></li>
+    
+
+    
+        <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-friday-in-the-plenary/"
+                class="button big next">Friday in the Plenary</a></li>
+    
+</ul>
+
+
+
+    
+        <article class="post">
+            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'shortname';
+    var disqus_identifier = 'http:\/\/brussels-sprouts-ideas.netlify.com\/post\/2017-07-07-mapping-package-presentations\/';
+    var disqus_title = 'Mapping Package Presentations';
+    var disqus_url = 'http:\/\/brussels-sprouts-ideas.netlify.com\/post\/2017-07-07-mapping-package-presentations\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </article>
+    
+
+
+    </div>
+    
+<section id="sidebar">
+
+    
+        <section id="intro">
+            
+            
+                
+                    <a href="/" class="logo"><img src="https://github.com/youngstreetinitiative/brusselssproutsideas/raw/master/public/images/ysilogo.png" alt="Brussels Sprouts Ideas" /></a>
+                
+            
+            
+                <header>
+                    <h2>Brussels Sprouts Ideas</h2>
+                    <p>Nathan and Jackson's Brussels Blog, for the sharing of knowledge. Powered by Hugo</p>
+                </header>
+            
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/youngstreetinitiative" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/things_tomsays" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+        </section>
+
+    
+        <section id="recent-posts">
+            <ul class="posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+                    
+                
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-data-wrangling-2-data-frame-management/">Data Wrangling 2: Data frame management</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-10'>
+                                    July 10, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-10-government-data/">Government Data</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-10'>
+                                    July 10, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-data-carpentary-workshop/">Data Carpentary tutorial</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-07'>
+                                    July 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-friday-in-the-plenary/">Friday in the Plenary</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-07'>
+                                    July 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+                    <li>
+                        <article>
+                            <header>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/">Mapping Package Presentations</a></h3>
+                                
+                                    
+                                
+                                <time class="published" datetime=
+                                    '2017-07-07'>
+                                    July 7, 2017</time>
+                            </header>
+                        </article>
+                    </li>
+                
+
+                
+                    <li>
+                        <ul class="actions">
+                            <li><a href=
+                            
+                                "/post/"
+                            
+                            class="button">View more posts</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+    
+    
+    
+        <section id="categories">
+            <ul class="posts">
+                <header>
+                    <h3><a href="/categories/">Categories</a></h3>
+                </header>
+
+                
+                    
+                
+
+                
+                    <li>
+                        <article>
+                            <header>
+                                <a href="/categories/r/">R</a>
+                                <span style="float:right;">1</span>
+                            </header>
+                        </article>
+                    </li>
+                
+            </ul>
+        </section>
+    
+
+    
+        
+        <section class="blurb">
+            <h2>About</h2>
+            <p>Day 0: Nothing to report</p>
+
+            <ul class="actions">
+                <li><a href="/about/" class="button">Learn More</a></li>
+            </ul>
+        </section>
+        
+
+    
+        <section id="footer">
+            <ul class="icons">
+                
+                
+                    
+<li><a href="//github.com/youngstreetinitiative" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//twitter.com/things_tomsays" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+                
+            </ul>
+
+            <p class="copyright">&copy; Brussels Sprouts Ideas. Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a>. Ported by <a href="//github.com/jpescador" target="_blank">Julio Pescador</a>. Powered by <a href="//gohugo.io" target="_blank">Hugo</a></p>
+        </section>
+
+</section>
+
+            </div>
+        <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+        
+
+        
+        
+            
+        
+
+        
+        
+            <script src="/js/jquery.min.js"></script>
+            <script src="/js/skel.min.js"></script>
+            <script src="/js/util.js"></script>
+            <script src="/js/main.js"></script>
+            <script src="/js/backToTop.js"></script>
+            <script src="/js/highlight.pack.js"></script>
+        
+
+        
+
+            
+            <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      }
+    });
+    </script>
+    <script type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+            
+
+            
+            <script>hljs.initHighlightingOnLoad();</script>
+            
+    </body>
+</html>
+

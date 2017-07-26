@@ -189,7 +189,7 @@
                     </li>
                 
                     <li>
-                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/"><p>Thursday In The Plenary</p></a>
+                        <a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/"><p>Mapping Package Presentations</p></a>
                     </li>
                 
             </ul>
@@ -205,6 +205,51 @@
         
             
         
+
+        
+            <article class="post">
+    <header>
+    <div class="title">
+        
+            <h2><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-wednesday-in-the-plenary/">Wednesday in the Plenary</a></h2>
+        
+        
+    </div>
+    <div class="meta">
+        
+            
+        
+
+        <time class="published"
+            datetime='2017-07-07'>
+            July 7, 2017</time>
+        <span class="author">Jackson</span>
+        
+            <p>5 minute read</p>
+        
+        
+    </div>
+</header>
+
+    
+
+    <p>Microsoft sponsor talk given by David Smith
+David Smith is a ledge. An Aussie going with a love for R, who got picked up by Microsoft a few years ago. From the sounds of his talk Microsoft has been almost completely converted to R and now spends a lot of money on keeping the R project humming along.
+R is now integrated into many aspects of Microsoft for “intelligence” which basically means analysis and forecasting/</p>
+
+    <footer>
+        <ul class="actions">
+            <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-wednesday-in-the-plenary/" class="button big">Continue Reading</a></li>
+        </ul>
+        <ul class="stats">
+    
+
+    
+    
+</ul>
+
+    </footer>
+</article>
 
         
             <article class="post">
@@ -295,78 +340,6 @@ First of all, we were introduced to an R package for analysing Aussie weather da
     <footer>
         <ul class="actions">
             <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-06-missing-data/" class="button big">Continue Reading</a></li>
-        </ul>
-        <ul class="stats">
-    
-
-    
-    
-</ul>
-
-    </footer>
-</article>
-
-        
-            <article class="post">
-    <header>
-    <div class="title">
-        
-            <h2><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility-2/">Labour Mobility Second Test. Bigger and bigglier. NO SHAME!</a></h2>
-        
-        
-    </div>
-    <div class="meta">
-        
-            
-        
-
-        <time class="published"
-            datetime='2017-06-28'>
-            June 28, 2017</time>
-        <span class="author">Jackson</span>
-        
-            <p>1 minute read</p>
-        
-        
-    </div>
-</header>
-
-    
-
-    <p>Labour Mobility in Australia from 1975-2016 Continued…
-Graphs still needs to be adjusted for:</p>
-
-<p>Lack of data between 1987 and 1994
-Inclusion of change in locality but not employer individuals from 1994 to 2004</p>
-
-<p>ChangeEmpIndustry &lt;- LabMobIndustryABS %&gt;% mutate(Date=as.Date(Date,format=&quot;%d/%m/%Y&quot;),
-Agriculture=Agriculture_ChangeEmp/Agriculture_Count,
-MiningUtilities=MiningUtilities_ChangeEmp/MiningUtilities_Count,
-Manufacturing=Manufacturing_ChangeEmp/Manufacturing_Count,
-Construction=Construction_ChangeEmp/Construction_Count,
-WholesaleRetail=WholesaleRetail_ChangeEmp/WholesaleRetail_Count,
-TransportStorageCommunications=TransportStorageCommunications_ChangeEmp/
-TransportStorageCommunications_Count,
-FinanceBusinessServ=FinanceBusinessServ_ChangeEmp/FinanceBusinessServ_Count,
-CommunityServ=CommunityServ_ChangeEmp/CommunityServ_Count,
-PublicAdmin=PublicAdmin_ChangeEmp/PublicAdmin_Count,
-EntertainmentHotelsPersonalServ=EntertainmentHotelsPersonalServ_ChangeEmp/
-EntertainmentHotelsPersonalServ_Count) %&gt;% select(Date,Agriculture,MiningUtilities,Manufacturing,Construction,WholesaleRetail,
-TransportStorageCommunications,FinanceBusinessServ,CommunityServ,
-PublicAdmin,EntertainmentHotelsPersonalServ) %&gt;%
-gather(key=Industry,value=Proportion,-Date)
-ggplot(ChangeEmpIndustry %&gt;% filter(Industry %in% c(&quot;Agriculture&quot;,&quot;MiningUtilities&quot;,
-&quot;Manufacturing&quot;,&quot;TransportStorageCommunications&quot;,
-&quot;Construction&quot;)),
-aes(x=Date,y=Proportion,colour=Industry))+
-geom_line() + scale_y_continuous(limits=c(0,0.26),breaks=c(seq(0,0.25,0.05)),labels=scales::percent)+
-scale_x_date(breaks = date_breaks(&quot;3 years&quot;),labels=date_format(&quot;%Y&quot;))+
-ylab(&quot;Proportion of Workers Employed at Survey&quot;)+xlab(&quot;Year&quot;)+
-theme(legend.</p>
-
-    <footer>
-        <ul class="actions">
-            <li><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-06-28-labour-mobility-2/" class="button big">Continue Reading</a></li>
         </ul>
         <ul class="stats">
     
@@ -551,7 +524,7 @@ theme(legend.</p>
                     <li>
                         <article>
                             <header>
-                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/">Thursday In The Plenary</a></h3>
+                                <h3><a href="http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/">Mapping Package Presentations</a></h3>
                                 
                                     
                                 

@@ -50,6 +50,18 @@ rOpenGov: Community Project for Open Government DataThis is a presentation by a
     </item>
     
     <item>
+      <title>Mapping Package Presentations</title>
+      <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/</link>
+      <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-mapping-package-presentations/</guid>
+      <description>Scalable, Spatiotemporal Tidy Arrays for R - starsEdzer Pebesma
+stars
+Follow-up to sfSupported by R ConsortiumAnticipating the question”When will raster support sf?”Here because setdiff(sf, sp) = rasterWill not easily replace raster (45,000 lines of code)Has time frame - Sept 17-Sept 18Consists of just design ideas right nowWhat is an array?
+Mapping from dimensions to valuesFor example:climate (lat, long, elevation, time) -&amp;gt; (temp, humidity)Sound (time, freq) -&amp;gt; (level)Space and time often among the dimensionsSpace can be 2D - raster - or 1D - points, roads, statesTime can be 2D - time of forecast + time to forecast; week + weekday; etcTables (data.</description>
+    </item>
+    
+    <item>
       <title>Thursday In The Plenary</title>
       <link>http://brussels-sprouts-ideas.netlify.com/post/2017-07-07-thursday-in-the-plenary/</link>
       <pubDate>Fri, 07 Jul 2017 00:00:00 +0000</pubDate>
